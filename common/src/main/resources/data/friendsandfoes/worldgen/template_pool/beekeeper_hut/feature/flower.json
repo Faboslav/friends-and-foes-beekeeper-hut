@@ -1,0 +1,60 @@
+{
+  "name": "friendsandfoes:beekeeper_hut/feature/flower",
+  "fallback": "minecraft:empty",
+  "elements": [
+	{
+	  "weight": 2,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/grass",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/allium",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/azure_bluet",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/cornflower",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/dandelion",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/flower/poppy",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	}
+  ]
+}

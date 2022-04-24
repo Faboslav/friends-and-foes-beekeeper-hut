@@ -1,0 +1,42 @@
+{
+  "name": "friendsandfoes:beekeeper_hut/feature/tree",
+  "fallback": "minecraft:empty",
+  "elements": [
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/tree/oak_tree",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/tree/tall_oak_tree",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/tree/birch_tree",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/tree/tall_birch_tree",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	}
+  ]
+}

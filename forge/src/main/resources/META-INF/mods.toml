@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "CC BY-NC-ND 4.0"
+
+[[mods]]
+modId = "beekeeperhut"
+version = "${modVersion}"
+displayName = "${modName}"
+authors = "${modAuthor}"
+description = "${modDescription}"
+logoFile = "icon.png"
+
+[[dependencies.beekeeperhut]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.beekeeperhut]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.beekeeperhut]]
+modId = "architectury"
+mandatory = true
+versionRange = "[4.2.50,)"
+ordering = "AFTER"
+side = "BOTH"

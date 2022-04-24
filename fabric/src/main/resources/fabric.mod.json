@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "beekeepershut",
+  "version": "${modVersion}",
+  "name": "${modName}",
+  "description": "${modDescription}",
+  "authors": [
+	"${modAuthor}"
+  ],
+  "contact": {
+	"homepage": "https://github.com/Faboslav/friends-and-foes",
+	"sources": "https://github.com/Faboslav/friends-and-foes",
+	"issues": "https://github.com/Faboslav/friends-and-foes/issues",
+	"wiki": "https://github.com/Faboslav/friends-and-foes/wiki"
+  },
+  "license": "CC BY-NC-ND 4.0",
+  "icon": "assets/beekeepershut/icon.png",
+  "environment": "*",
+  "entrypoints": {
+	"main": [
+	  "com.faboslav.friendsandfoes.beekeeperhut.fabric.BeekeeperHutFabric"
+	],
+	"server": [
+	  "com.faboslav.friendsandfoes.beekeeperhut.fabric.BeekeeperHutServer"
+	]
+  },
+  "mixins": [
+	"beekeepershut-common.mixins.json"
+  ],
+  "depends": {
+	"fabric": "*",
+	"minecraft": ">=1.18.2",
+	"architectury": ">=4.0.30",
+	"java": ">=17"
+  }
+}

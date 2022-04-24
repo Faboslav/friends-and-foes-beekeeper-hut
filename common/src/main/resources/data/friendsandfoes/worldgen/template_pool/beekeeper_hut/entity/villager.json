@@ -1,0 +1,15 @@
+{
+  "name": "friendsandfoes:beekeeper_hut/entity/villager",
+  "fallback": "minecraft:empty",
+  "elements": [
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/entity/villager",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	}
+  ]
+}

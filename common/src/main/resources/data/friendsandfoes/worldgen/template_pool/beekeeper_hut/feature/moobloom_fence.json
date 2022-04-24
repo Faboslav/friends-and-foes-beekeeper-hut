@@ -1,0 +1,42 @@
+{
+  "name": "friendsandfoes:beekeeper_hut/feature/moobloom_fence",
+  "fallback": "minecraft:empty",
+  "elements": [
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/moobloom_fence/moobloom_fence_small1",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/moobloom_fence/moobloom_fence_small2",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/moobloom_fence/moobloom_fence_big1",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	},
+	{
+	  "weight": 1,
+	  "element": {
+		"location": "friendsandfoes:beekeeper_hut/moobloom_fence/moobloom_fence_big2",
+		"processors": "minecraft:empty",
+		"projection": "rigid",
+		"element_type": "minecraft:single_pool_element"
+	  }
+	}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+	{
+	  "structure": "friendsandfoes:beekeeper_hut",
+	  "weight": 1
+	}
+  ],
+  "placement": {
+	"salt": 516979219,
+	"spacing": 32,
+	"separation": 8,
+	"type": "minecraft:random_spread"
+  }
+}

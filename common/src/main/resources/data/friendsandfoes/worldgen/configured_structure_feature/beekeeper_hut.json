@@ -1,0 +1,11 @@
+{
+  "type": "friendsandfoes:beekeeper_hut",
+  "config": {
+	"start_pool": "friendsandfoes:beekeeper_hut/base_plate",
+	"size": 5
+  },
+  "biomes": "#friendsandfoes:has_structure/beekeeper_hut",
+  "adapt_noise": true,
+  "spawn_overrides": {
+  }
+}
