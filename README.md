@@ -13,53 +13,9 @@ is to also add related features to all of the mobs and expand the minecraft worl
 way.
 
 You can check [wiki] for a detailed overview of implemented features.
-
 <br>
 <br>
 <br>
-
-<p align="center">
-    <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/roadmap.svg?raw=true" width="290" height="48" title="Roadmap" alt="Roadmap">
-</p>
-
----
-
-The main goal is to add all of the mobs listed below. I already got pretty solid ideas for most of the mobs and features
-but you are more than welcome to [share your ideas or give some feedback].
-
-### Friends
-
-- [x] [Copper Golem]
-- [x] [Glare]
-- [x] [Moobloom]
-
-### Foes
-
-- [x] [Iceologer]
-- [x] [Illusioner]
-- [ ] Barnacle
-- [ ] Great Hunger
-- [ ] Wildfire
-
-### Block/Items
-
-- [x] [Beehive]
-- [x] [Buttercup]
-- [x] [Copper Button]
-
-### Structures
-
-- [x] [Beekeeper Area]
-- [x] [Copper Golem Workstation]
-- [x] [Iceologer Cabin]
-- [x] [Illusioner Shack]
-
-### Village/Villagers
-
-- [x] [Beekeeper]
-  <br>
-  <br>
-  <br>
 
 <p align="center">
   <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/socials.svg?raw=true" width="247" height="48" title="Socials" alt="Socials">
