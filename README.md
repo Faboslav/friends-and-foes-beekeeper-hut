@@ -4,7 +4,7 @@
 
 ---
 
-[Friends&Foes] Beekeper Hut is a small addon adding the beekeper hut structure. Structure can be found in [Meadow] and [Flower Forest] biomes.
+[Friends&Foes] - Beekeeper Hut is a small addon adding the beekeeper hut structure. Structure can be found in [Meadow] and [Flower Forest] biomes.
 
 Please feel free to [report crash/bug, share your ideas or give some feedback].
 ## Important links
