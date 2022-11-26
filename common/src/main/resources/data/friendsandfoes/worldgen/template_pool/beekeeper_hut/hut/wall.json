@@ -1,0 +1,42 @@
+{
+	"name": "friendsandfoes:beekeeper_hut/hut/wall",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "friendsandfoes:beekeeper_hut/hut/wall/wall1",
+				"processors": "friendsandfoes:beekeeper_hut",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "friendsandfoes:beekeeper_hut/hut/wall/wall2",
+				"processors": "friendsandfoes:beekeeper_hut",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "friendsandfoes:beekeeper_hut/hut/wall/wall3",
+				"processors": "friendsandfoes:beekeeper_hut",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "friendsandfoes:beekeeper_hut/hut/wall/wall4",
+				"processors": "friendsandfoes:beekeeper_hut",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

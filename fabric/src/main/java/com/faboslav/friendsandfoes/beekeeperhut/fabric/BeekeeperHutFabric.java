@@ -7,7 +7,6 @@ public final class BeekeeperHutFabric implements ModInitializer
 {
 	@Override
 	public void onInitialize() {
-		BeekeeperHut.initRegisters();
-		BeekeeperHut.initCustomRegisters();
+		BeekeeperHut.postInit();
 	}
 }

@@ -1,102 +1,53 @@
-<br>
 <p align="center">
-    <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/title.svg?raw=true" width="500" height="48" title="Friends&Foes" alt="Friends&Foes">
+    <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/logo/logo.jpg?raw=true" title="Friends&Foes" alt="Friends&Foes">
 </p>
 
 ---
 
-Friends&Foes is a mod focused on adding all eliminated mobs from the minecraft mob votes and also few other exceptional
-mobs like the Illusioner.
+[Friends&Foes] Beekeper Hut is a small addon adding the beekeper hut structure. Structure can be found in [Meadow] and [Flower Forest] biomes.
 
-As cool looking as the glow squid is, it does not really bring anything new to the game. Thus the main focus of this mod
-is to also add related features to all of the mobs and expand the minecraft world and mechanics in a vanilla friendly
-way.
-
-You can check [wiki] for a detailed overview of implemented features.
-<br>
-<br>
-<br>
-
-<p align="center">
-  <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/socials.svg?raw=true" width="247" height="48" title="Socials" alt="Socials">
-</p>
-
----
+Please feel free to [report crash/bug, share your ideas or give some feedback].
+## Important links
 
 - [CurseForge (Fabric)]
 - [Modrinth (Fabric)]
 - [CurseForge (Forge)]
 - [Modrinth (Forge)]
+- [CurseForge (Quilt)]
+- [Modrinth (Quilt)]
 - [Discord]
 
-<br>
-<br>
-<br>
+## Support
 
-<p align="center">
-  <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/curseforge/title/support.svg?raw=true" width="276" height="48" title="Support" alt="Support">
-</p>
+I will continue to develop my mods regardless of any support as it is my hobby and I very much enjoy it. If you want to support me anyway you can
+do that on [Patreon] or [Ko-fi], I appreciate that.
 
----
-
-I will continue to develop my mods regardless of any support as it is my hobby. If you want to support me anyway you can
-do that on [Patreon] or [Ko-fi].
-
-<br>
-<br>
-<br>
-
-<p align="center">
-  <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/license.svg?raw=true" width="251" height="48" title="License" alt="License">
-</p>
-
----
+## License, source code and other resources
 
 The mod is licensed with [CC BY-NC-ND 4.0] license.
 
-Feel free to look over my code for examples of how i have implemented and solved various problems while writing this
+Feel free to look over my code for examples of how I have implemented and solved various problems while writing this
 mod, incorporate snippets into your own.
 
-You can also look into the [blockbench directory] which contains all of the models & palettes and into
-the [textures directory] for the textures. Get inspired, but please don't just copy & paste any of it as your own.
+[Friends&Foes]: https://github.com/Faboslav/friends-and-foes
 
-[Copper Golem]: https://github.com/Faboslav/friends-and-foes/wiki/Copper-Golem
+[Meadow]: https://minecraft.fandom.com/wiki/Mountains#Meadow
 
-[Glare]: https://github.com/Faboslav/friends-and-foes/wiki/Glare
+[Flower Forest]: https://minecraft.fandom.com/wiki/Forest#Flower_forest
 
-[Moobloom]: https://github.com/Faboslav/friends-and-foes/wiki/Moobloom
+[report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues/new/choose
 
-[Iceologer]: https://github.com/Faboslav/friends-and-foes/wiki/Iceologer
-
-[Illusioner]: https://github.com/Faboslav/friends-and-foes/wiki/Illusioner
-
-[Beehive]: https://github.com/Faboslav/friends-and-foes/wiki/Beehive
-
-[Buttercup]: https://github.com/Faboslav/friends-and-foes/wiki/Buttercup
-
-[Copper Button]: https://github.com/Faboslav/friends-and-foes/wiki/Copper-Button
-
-[Beekeeper Area]: https://github.com/Faboslav/friends-and-foes/wiki/Beekeeeper-Area
-
-[Copper Golem Workstation]: https://github.com/Faboslav/friends-and-foes/wiki/Copper-Golem-Workstation
-
-[Iceologer Cabin]: https://github.com/Faboslav/friends-and-foes/wiki/Iceologer-Cabin
-
-[Illusioner Shack]: https://github.com/Faboslav/friends-and-foes/wiki/Illusioner-Shack
-
-[Beekeeper]: https://github.com/Faboslav/friends-and-foes/wiki/Beekeeeper
-
-[share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes/issues/new?assignees=Faboslav&labels=feature&template=feature_request.md&title=
-
-[wiki]: https://github.com/Faboslav/friends-and-foes/wiki
-
-[CurseForge (Fabric)]: https://www.curseforge.com/minecraft/mc-mods/friends-foes
+[CurseForge (Fabric)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes
 
 [Modrinth (Fabric)]: https://modrinth.com/mod/friends-and-foes
 
-[CurseForge (Forge)]: https://www.curseforge.com/minecraft/mc-mods/friends-foes-forge
+[CurseForge (Forge)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-forge
 
 [Modrinth (Forge)]: https://modrinth.com/mod/friends-and-foes-forge
+
+[CurseForge (Quilt)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-quilt
+
+[Modrinth (Quilt)]: https://modrinth.com/mod/friends-and-foes-quilt
 
 [Discord]: https://discord.com/invite/QGwFvvMQCn
 
@@ -105,7 +56,3 @@ the [textures directory] for the textures. Get inspired, but please don't just c
 [Ko-fi]: https://ko-fi.com/faboslav
 
 [CC BY-NC-ND 4.0]: https://github.com/Faboslav/friends-and-foes/blob/master/LICENSE.txt
-
-[blockbench directory]: https://github.com/Faboslav/friends-and-foes/tree/master/blockbench
-
-[textures directory]: https://github.com/Faboslav/friends-and-foes/tree/master/src/main/resources/assets/friendsandfoes/textures

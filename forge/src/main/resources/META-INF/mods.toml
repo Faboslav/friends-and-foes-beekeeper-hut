@@ -1,6 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
 license = "CC BY-NC-ND 4.0"
+issueTrackerURL = "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues"
 
 [[mods]]
 modId = "beekeeperhut"
@@ -8,12 +9,12 @@ version = "${modVersion}"
 displayName = "${modName}"
 authors = "${modAuthor}"
 description = "${modDescription}"
-logoFile = "icon.png"
+logoFile = "icon.jpg"
 
 [[dependencies.beekeeperhut]]
 modId = "forge"
 mandatory = true
-versionRange = "[40,)"
+versionRange = "[40.1.0,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -27,6 +28,13 @@ side = "BOTH"
 [[dependencies.beekeeperhut]]
 modId = "architectury"
 mandatory = true
-versionRange = "[4.2.50,)"
+versionRange = "[4.4.60,)"
 ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.beekeeperhut]]
+modId = "friendsandfoes"
+mandatory = false
+versionRange = "[1.4.3,)"
+ordering = "NONE"
 side = "BOTH"
