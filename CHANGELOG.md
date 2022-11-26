@@ -1,3 +1,3 @@
-## mc1.18.2-1.0.0, November 26, 2022
+## mc1.19.2-1.0.0, November 26, 2022
 
-- Added beeekeper's hut structure
+- Added Beeekeper Hut structure
