@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-	archivesBaseName = "${rootProject.mod_id}-fabric-mc${rootProject.minecraft_version}"
+	archivesBaseName = "friendsandfoes-beekeeperhut-fabric-mc${rootProject.minecraft_version}"
 }
 
 architectury {
