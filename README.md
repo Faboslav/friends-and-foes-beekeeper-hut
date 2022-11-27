@@ -37,17 +37,17 @@ mod, incorporate snippets into your own.
 
 [report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues/new/choose
 
-[CurseForge (Fabric)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes
+[CurseForge (Fabric)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-fabric
 
-[Modrinth (Fabric)]: https://modrinth.com/mod/friends-and-foes
+[Modrinth (Fabric)]: https://modrinth.com/mod/friends-and-foes-beekeeper-hut-fabric
 
-[CurseForge (Forge)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-forge
+[CurseForge (Forge)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-forge
 
-[Modrinth (Forge)]: https://modrinth.com/mod/friends-and-foes-forge
+[Modrinth (Forge)]: https://modrinth.com/mod/friends-and-foes-beekeeper-hut-forge
 
-[CurseForge (Quilt)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-quilt
+[CurseForge (Quilt)]: https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-quilt
 
-[Modrinth (Quilt)]: https://modrinth.com/mod/friends-and-foes-quilt
+[Modrinth (Quilt)]: https://modrinth.com/mod/friends-and-foes-beekeeper-hut-quilt
 
 [Discord]: https://discord.com/invite/QGwFvvMQCn
 
