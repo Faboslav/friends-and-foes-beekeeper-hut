@@ -7,6 +7,7 @@
 [Friends&Foes] - Beekeeper Hut is a small addon adding the beekeeper hut structure. Structure can be found in [Meadow] and [Flower Forest] biomes.
 
 Please feel free to [report crash/bug, share your ideas or give some feedback].
+
 ## Important links
 
 - [CurseForge (Fabric)]
@@ -22,7 +23,7 @@ Please feel free to [report crash/bug, share your ideas or give some feedback].
 I will continue to develop my mods regardless of any support as it is my hobby and I very much enjoy it. If you want to support me anyway you can
 do that on [Patreon] or [Ko-fi], I appreciate that.
 
-## License, source code and other resources
+## License and source code
 
 The mod is licensed with [CC BY-NC-ND 4.0] license.
 
