@@ -28,6 +28,9 @@ dependencies {
 	modImplementation "org.quiltmc:quilt-loader:${rootProject.quilt_loader_version}"
 	modApi "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${rootProject.quilt_fabric_api_version}"
 
+	// For development
+	modRuntimeOnly "curse.maven:friendsandfoes-628248:4174668"
+
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionQuilt")) { transitive false }
 }
@@ -83,7 +86,28 @@ components.java {
 }
 
 repositories {
-	maven { url "https://maven.quiltmc.org/repository/release/" }
+	maven {
+		name = 'Fabric'
+		url = 'https://maven.fabricmc.net/'
+	}
+
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
+
+	maven {
+		url "https://maven.terraformersmc.com/releases/"
+		content {
+			includeGroup "com.terraformersmc"
+		}
+	}
+
+	maven { url "https://www.cursemaven.com" }
 }
 
 publishing {

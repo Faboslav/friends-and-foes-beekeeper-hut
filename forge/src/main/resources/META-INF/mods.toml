@@ -14,27 +14,20 @@ logoFile = "icon.jpg"
 [[dependencies.beekeeperhut]]
 modId = "forge"
 mandatory = true
-versionRange = "[40.1.0,)"
+versionRange = "[44.0.18,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.beekeeperhut]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18.2,)"
+versionRange = "[1.18.3,)"
 ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.beekeeperhut]]
-modId = "architectury"
-mandatory = true
-versionRange = "[4.4.60,)"
-ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.beekeeperhut]]
 modId = "friendsandfoes"
 mandatory = false
-versionRange = "[1.4.3,)"
+versionRange = "[1.7.0,)"
 ordering = "NONE"
 side = "BOTH"
