@@ -21,7 +21,7 @@ public final class BeekeeperHut
 		return LOGGER;
 	}
 
-	public static void postInit() {
-		BeekeeperHutStructureProcessorTypes.postInit();
+	public static void init() {
+		BeekeeperHutStructureProcessorTypes.init();
 	}
 }

@@ -9,10 +9,7 @@ import net.minecraft.structure.processor.StructureProcessorType;
 public final class BeekeeperHutStructureProcessorTypes
 {
 	public static void init() {
-	}
-
-	public static void postInit() {
-		StructureEntityProcessorTypes.postInit();
+		StructureEntityProcessorTypes.init();
 	}
 
 	private BeekeeperHutStructureProcessorTypes() {

@@ -1,9 +1,10 @@
 package com.faboslav.friendsandfoes.beekeeperhut.forge;
 
 import com.faboslav.friendsandfoes.beekeeperhut.BeekeeperHut;
+import com.faboslav.friendsandfoes.beekeeperhut.platform.forge.RegistryHelperImpl;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(BeekeeperHut.MOD_ID)
@@ -12,12 +13,9 @@ public final class BeekeeperHutForge
 {
 	public BeekeeperHutForge() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		bus.addListener(BeekeeperHutForge::init);
-	}
 
-	private static void init(final FMLCommonSetupEvent event) {
-		event.enqueueWork(() -> {
-			BeekeeperHut.postInit();
-		});
+		RegistryHelperImpl.STRUCTURE_PROCESSOR_TYPES.register(bus);
+
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 }
