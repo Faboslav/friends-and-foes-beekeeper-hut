@@ -96,15 +96,3 @@ repositories {
 
 	maven { url "https://maven.quiltmc.org/repository/release/" }
 }
-
-publishing {
-	publications {
-		mavenFabric(MavenPublication) {
-			artifactId = rootProject.mod_id + "-" + project.name
-			from components.java
-		}
-	}
-
-	repositories {
-	}
-}

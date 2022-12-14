@@ -118,15 +118,3 @@ repositories {
 
 	maven { url "https://www.cursemaven.com" }
 }
-
-publishing {
-	publications {
-		mavenFabric(MavenPublication) {
-			artifactId = rootProject.mod_id + "-" + project.name
-			from components.java
-		}
-	}
-
-	repositories {
-	}
-}
