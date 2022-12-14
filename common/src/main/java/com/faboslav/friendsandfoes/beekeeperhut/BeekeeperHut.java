@@ -17,10 +17,6 @@ public final class BeekeeperHut
 		);
 	}
 
-	public static Logger getLogger() {
-		return LOGGER;
-	}
-
 	public static void init() {
 		BeekeeperHutStructureProcessorTypes.init();
 	}
