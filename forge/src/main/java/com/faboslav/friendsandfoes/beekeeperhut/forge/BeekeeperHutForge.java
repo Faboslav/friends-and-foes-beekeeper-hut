@@ -12,6 +12,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public final class BeekeeperHutForge
 {
 	public BeekeeperHutForge() {
+		BeekeeperHut.init();
+
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		RegistryHelperImpl.STRUCTURE_PROCESSOR_TYPES.register(bus);

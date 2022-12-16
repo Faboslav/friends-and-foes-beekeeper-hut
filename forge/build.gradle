@@ -22,11 +22,6 @@ configurations {
 dependencies {
 	forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
-	implementation("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
-	annotationProcessor("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
-	include("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
-	forgeRuntimeLibrary("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
-
 	// For development
 	modRuntimeOnly "curse.maven:friendsandfoes-602059:4174670"
 
