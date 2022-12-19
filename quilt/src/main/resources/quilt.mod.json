@@ -1,8 +1,5 @@
 {
 	"schema_version": 1,
-	"mixin": [
-		"beekeeperhut-common.mixins.json"
-	],
 	"quilt_loader": {
 		"group": "${group}",
 		"id": "beekeeperhut",
