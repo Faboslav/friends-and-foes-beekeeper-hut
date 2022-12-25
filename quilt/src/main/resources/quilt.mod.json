@@ -34,16 +34,16 @@
 				"version": ">=1.19.3"
 			},
 			{
-				"id": "friendsandfoes",
-				"version": ">=1.7.0"
-			},
-			{
 				"id": "quilt_loader",
 				"version": "*"
 			},
 			{
 				"id": "quilt_base",
 				"version": "*"
+			},
+			{
+				"id": "friendsandfoes",
+				"version": ">=1.7.0"
 			}
 		]
 	}

@@ -27,7 +27,7 @@ side = "BOTH"
 
 [[dependencies.beekeeperhut]]
 modId = "friendsandfoes"
-mandatory = false
+mandatory = true
 versionRange = "[1.7.0,)"
 ordering = "NONE"
 side = "BOTH"
