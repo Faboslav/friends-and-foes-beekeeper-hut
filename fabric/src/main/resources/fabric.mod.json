@@ -10,7 +10,8 @@
 	"contact": {
 		"homepage": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut",
 		"sources": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut",
-		"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues"
+		"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues",
+		"discord": "https://discord.com/invite/QGwFvvMQCn"
 	},
 	"license": "CC BY-NC-ND 4.0",
 	"icon": "icon.png",
@@ -25,6 +26,6 @@
 		"minecraft": ">=1.19",
 		"fabric": "*",
 		"fabricloader": "*",
-		"friendsandfoes": ">=1.5.7"
+		"friendsandfoes": ">=1.6.5"
 	}
 }

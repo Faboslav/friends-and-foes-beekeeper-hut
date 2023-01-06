@@ -10,6 +10,7 @@ displayName = "${modName}"
 authors = "${modAuthor}"
 description = "${modDescription}"
 logoFile = "icon.jpg"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-forge"
 
 [[dependencies.beekeeperhut]]
 modId = "forge"
@@ -28,6 +29,6 @@ side = "BOTH"
 [[dependencies.beekeeperhut]]
 modId = "friendsandfoes"
 mandatory = true
-versionRange = "[1.5.7,)"
+versionRange = "[1.6.5,)"
 ordering = "NONE"
 side = "BOTH"
