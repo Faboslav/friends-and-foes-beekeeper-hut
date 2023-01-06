@@ -20,7 +20,7 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"environment": "*",
 		"entrypoints": {
-			"main": [
+			"init": [
 				"com.faboslav.friendsandfoes.beekeeperhut.quilt.BeekeeperHutQuilt"
 			]
 		},
