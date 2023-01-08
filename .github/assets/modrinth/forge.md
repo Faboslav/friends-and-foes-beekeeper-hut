@@ -1,8 +1,8 @@
 <br>
 
 <center>
-	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-flowery-mooblooms/master/.github/assets/logo/logo.png" width="700px" alt="Friends&amp;Foes - Flowery Mooblooms" title="Friends&amp;Foes - Flowery Mooblooms">
-	<h1>Beekeeper Hut (Fabric)</h1>
+	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" width="700px" alt="Friends&amp;Foes - Beekeeper Hut" title="Friends&amp;Foes - Beekeeper Hut">
+	<h1>Beekeeper Hut (Forge)</h1>
 </center>
 
 <center>
@@ -29,7 +29,7 @@
 	<span>Be aware that the main <a style="text-decoration: none;" href="https://modrinth.com/mod/friends-and-foes-forge">Friends&Foes</a> mod is required to run this addon. Looking for the <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-fabric">Fabric</a> or <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-quilt">Quilt</a> version?</span>
 </p>
 
-<h2>🐮 Beekeeper huts</h2>
+<h2>🍯 Beekeeper huts</h2>
 <p>
 	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/images/beekeeper_hut1.png" width="429"/>
 	<span>&emsp;&emsp;</span>

@@ -1,7 +1,7 @@
 <br>
 
 <center>
-	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-flowery-mooblooms/master/.github/assets/logo/logo.png" width="700px" alt="Friends&amp;Foes - Flowery Mooblooms" title="Friends&amp;Foes - Flowery Mooblooms">
+	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" width="700px" alt="Friends&amp;Foes - Beekeeper Hut" title="Friends&amp;Foes - Beekeeper Hut">
 	<h1>Beekeeper Hut (Fabric)</h1>
 </center>
 
@@ -32,7 +32,7 @@
 	<span>Be aware that the main <a style="text-decoration: none;" href="https://modrinth.com/mod/friends-and-foes">Friends&Foes</a> mod is required to run this addon. Looking for the <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-forge">Forge</a> or <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-quilt">Quilt</a> version?</span>
 </p>
 
-<h2>🐮 Beekeeper huts</h2>
+<h2>🍯 Beekeeper huts</h2>
 <p>
 	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/images/beekeeper_hut1.png" width="429"/>
 	<span>&emsp;&emsp;</span>
@@ -51,7 +51,7 @@
 
 <h2>💬 Community</h2>
 <p style="font-size: 14px;">
-	Feel free to <a style="text-decoration: none;" href="https://discord.gg/QGwFvvMQCn">join our community at the discord server</a> to chat, share your creations, ask any question or to simply be updated about the latest development of the mod and notified when the new release is out. Also don't hesitate to <a href="https://github.com/Faboslav/friends-and-foes-flowery-mooblooms/issues">report any crash or bug via GitHub issues</a>.
+	Feel free to <a style="text-decoration: none;" href="https://discord.gg/QGwFvvMQCn">join our community at the discord server</a> to chat, share your creations, ask any question or to simply be updated about the latest development of the mod and notified when the new release is out. Also don't hesitate to <a href="https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues">report any crash or bug via GitHub issues</a>.
 </p>
 
 <br>
@@ -65,7 +65,7 @@
 <h2>📜 License</h2>
 
 <p>
-	<span style="font-size: 14px;">The mod is licensed with <a style="font-size: 14px;" href="https://raw.githubusercontent.com/Faboslav/friends-and-foes-flowery-mooblooms/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.</span>
+	<span style="font-size: 14px;">The mod is licensed with <a style="font-size: 14px;" href="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.</span>
 </p>
 <p>
 	<span style="font-size: 14px;">Feel free to look over my code for examples of how i have implemented and solved various problems while writing this mod, incorporate snippets into your own code.&nbsp;Also feel free to use this mod in any modpack (although credit/link back to this page will be greatly appreciated).</span>
