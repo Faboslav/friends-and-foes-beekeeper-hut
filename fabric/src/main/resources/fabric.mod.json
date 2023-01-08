@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "beekeeperhut",
+	"id": "${modId}",
 	"version": "${modVersion}",
 	"name": "${modName}",
 	"description": "${modDescription}",
@@ -10,7 +10,8 @@
 	"contact": {
 		"homepage": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut",
 		"sources": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut",
-		"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues"
+		"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues",
+		"discord": "https://discord.com/invite/QGwFvvMQCn"
 	},
 	"license": "CC BY-NC-ND 4.0",
 	"icon": "icon.png",

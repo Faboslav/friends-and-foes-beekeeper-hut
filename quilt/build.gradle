@@ -32,8 +32,7 @@ dependencies {
 	annotationProcessor("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
 	include("com.github.LlamaLad7:MixinExtras:${rootProject.mixin_extras_version}")
 
-	// For development
-	modRuntimeOnly "curse.maven:friendsandfoes-628248:4174668"
+	modRuntimeOnly "curse.maven:friendsandfoes-quilt-628248:4255035"
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionQuilt")) { transitive false }
