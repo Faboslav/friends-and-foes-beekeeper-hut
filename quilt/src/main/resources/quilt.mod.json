@@ -16,7 +16,7 @@
 			"wiki": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/wiki"
 		},
 		"license": "CC BY-NC-ND 4.0",
-		"icon": "icon.jpg",
+		"icon": "icon.png",
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"environment": "*",
 		"entrypoints": {

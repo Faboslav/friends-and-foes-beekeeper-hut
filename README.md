@@ -1,6 +1,7 @@
-<p align="center">
-    <img src="https://github.com/Faboslav/friends-and-foes/blob/master/.github/assets/logo/logo.jpg?raw=true" title="Friends&Foes" alt="Friends&Foes">
-</p>
+<center>
+    <img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" title="Friends&Foes" alt="Friends&Foes">
+	<h1>Beekeeper Hut</h1>
+</center>
 
 ---
 
@@ -56,4 +57,4 @@ mod, incorporate snippets into your own.
 
 [Ko-fi]: https://ko-fi.com/faboslav
 
-[CC BY-NC-ND 4.0]: https://github.com/Faboslav/friends-and-foes/blob/master/LICENSE.txt
+[CC BY-NC-ND 4.0]: https://github.com/Faboslav/friends-and-foes-beekeeper-hut/blob/master/LICENSE.txt

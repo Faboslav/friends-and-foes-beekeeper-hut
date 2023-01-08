@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "beekeeperhut",
+	"id": "${modId}",
 	"version": "${modVersion}",
 	"name": "${modName}",
 	"description": "${modDescription}",

@@ -1,4 +1,4 @@
-## mc1.19.2-1.2.0, January 06, 2023
+## mc1.19.2-1.2.0, January 08, 2023
 
 - Fixed crash on quilt startup
 - Fixed mixins warning
