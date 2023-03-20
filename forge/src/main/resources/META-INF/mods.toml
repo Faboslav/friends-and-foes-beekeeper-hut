@@ -15,16 +15,16 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beek
 [[dependencies.${ modId }]]
 modId = "forge"
 mandatory = true
-versionRange = "[44.0.18,)"
+versionRange = "[45.0.9,)"
 
 [[dependencies.${ modId }]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.3,)"
+versionRange = "[1.19.4,)"
 
 [[dependencies.${ modId }]]
 modId = "friendsandfoes"
 mandatory = true
-versionRange = "[1.7.0,)"
+versionRange = "[1.8.0,)"
 ordering = "NONE"
 side = "BOTH"

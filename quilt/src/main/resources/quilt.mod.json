@@ -4,21 +4,22 @@
 		"group": "${group}",
 		"id": "beekeeperhut",
 		"version": "${modVersion}",
-		"name": "${modName}",
-		"description": "${modDescription}",
-		"authors": [
-			"${modAuthor}"
-		],
-		"contact": {
-			"homepage": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
-			"sources": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
-			"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues",
-			"wiki": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/wiki"
+		"metadata": {
+			"name": "${modName}",
+			"description": "${modDescription}",
+			"authors": [
+				"${modAuthor}"
+			],
+			"contact": {
+				"homepage": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
+				"sources": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
+				"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues",
+				"wiki": "https://github.com/Faboslav/friends-and-foes/wiki"
+			},
+			"license": "CC-BY-NC-ND-4.0",
+			"icon": "icon.png"
 		},
-		"license": "CC BY-NC-ND 4.0",
-		"icon": "icon.png",
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"environment": "*",
 		"entrypoints": {
 			"init": [
 				"com.faboslav.friendsandfoes.beekeeperhut.quilt.BeekeeperHutQuilt"
@@ -31,7 +32,7 @@
 			},
 			{
 				"id": "minecraft",
-				"version": ">=1.19.3"
+				"version": ">=1.19.4"
 			},
 			{
 				"id": "quilt_loader",
@@ -43,7 +44,7 @@
 			},
 			{
 				"id": "friendsandfoes",
-				"version": ">=1.7.0"
+				"version": ">=1.8.0"
 			}
 		]
 	}
