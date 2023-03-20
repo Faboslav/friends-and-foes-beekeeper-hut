@@ -2,7 +2,6 @@
 
 - Ported to 1.19.4
 
-
 ## mc1.19.3-1.2.0, January 08, 2023
 
 - Fixed crash on quilt startup
