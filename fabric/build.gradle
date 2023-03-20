@@ -37,8 +37,8 @@ dependencies {
 	modRuntimeOnly "curse.maven:lazydfu-433518:3821870"
 	// https://www.curseforge.com/minecraft/mc-mods/starlight/files
 	modRuntimeOnly "curse.maven:starlight-521783:3835973"
-	modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:3827588"
-	modRuntimeOnly "curse.maven:friendsandfoes-551364:4255033"
+	modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:4444372"
+	modRuntimeOnly "curse.maven:friendsandfoes-551364:4447712"
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
