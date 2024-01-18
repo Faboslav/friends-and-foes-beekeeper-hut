@@ -48,8 +48,9 @@ jobs:
                 with:
                     name: "friends-and-foes-beekeeper-hut"
                     path: |
-                        fabric/build/libs/friendsandfoes-beekeeper-fabric-${{ github.ref_name }}.jar
-                        forge/build/libs/friendsandfoes-beekeeper-forge-${{ github.ref_name }}.jar
+                        fabric/build/libs/friendsandfoes-beekeeperhut-fabric-${{ github.ref_name }}.jar
+                        forge/build/libs/friendsandfoes-beekeeperhut-forge-${{ github.ref_name }}.jar
+                        neoforge/build/libs/friendsandfoes-beekeeperhut-neoforge-${{ github.ref_name }}.jar
                         LICENSE.txt
 
     publish-license:
