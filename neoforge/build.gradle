@@ -29,7 +29,7 @@ dependencies {
 	implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:${rootProject.mixin_extras_version}"))
 	implementation(include("io.github.llamalad7:mixinextras-neoforge:${rootProject.mixin_extras_version}"))
 
-	modRuntimeOnly "curse.maven:friendsandfoes-forge-602059:5012916"
+	modRuntimeOnly "curse.maven:friendsandfoes-forge-602059:5032281"
 }
 
 processResources {
@@ -39,7 +39,6 @@ processResources {
 	inputs.property "modDescription", rootProject.mod_description
 	inputs.property "modAuthor", rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
-	inputs.property "forgeVersion", rootProject.forge_version
 
 	filesMatching("META-INF/mods.toml") {
 		expand "modId": rootProject.mod_id,
@@ -47,8 +46,7 @@ processResources {
 			"modName": rootProject.mod_name,
 			"modDescription": rootProject.mod_description,
 			"modAuthor": rootProject.mod_author,
-			"minecraftVersion": rootProject.minecraft_version,
-			"forgeVersion": rootProject.forge_version
+			"minecraftVersion": rootProject.minecraft_version
 	}
 }
 

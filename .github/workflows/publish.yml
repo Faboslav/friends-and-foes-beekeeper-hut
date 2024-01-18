@@ -10,7 +10,7 @@ env:
         Java 17
         Java 18
     GAME_VERSIONS: |
-        1.20.2
+        1.20.4
     FABRIC_DEPENDENCIES: |
         fabric-api | depends | *
         friends-and-foes | depends | *
@@ -101,39 +101,6 @@ jobs:
                     name: Friends&Foes - Beekeeper Hut ${{ github.ref_name }} (Fabric/Quilt)
                     version: fabric-${{ github.ref_name }}
                     dependencies: ${{ env.FABRIC_DEPENDENCIES }}
-                    java: ${{ env.JAVA_VERSIONS }}
-
-    publish-forge:
-        needs: build
-        runs-on: ubuntu-latest
-        name: "Publish Forge to Github, CurseForge and Modrinth"
-        timeout-minutes: 10
-
-        steps:
-            -   name: "Download artifacts"
-                uses: actions/download-artifact@v4.1.1
-                with:
-                    name: "friends-and-foes-beekeeper-hut"
-
-            -   name: "Publish Forge to Github, CurseForge and Modrinth"
-                uses: Kir-Antipov/mc-publish@v3.3.0
-                with:
-                    github-token: ${{ secrets.GITHUB_TOKEN }}
-
-                    curseforge-id: 782443
-                    curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
-
-                    modrinth-id: wYtDgIUZ
-                    modrinth-featured: true
-                    modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
-
-                    files: forge/build/libs/friendsandfoes-beekeeper-forge-${{ github.ref_name }}.jar
-                    version-type: ${{ env.VERSION_TYPE }}
-                    loaders: forge
-                    game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Friends&Foes - Beekeeper Hut ${{ github.ref_name }} (Forge)
-                    version: forge-${{ github.ref_name }}
-                    dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
 
     publish-neoforge:
