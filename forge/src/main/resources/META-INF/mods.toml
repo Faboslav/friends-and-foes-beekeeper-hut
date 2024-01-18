@@ -1,6 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "CC BY-NC-ND 4.0"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-forge"
 issueTrackerURL = "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues"
 
 [[mods]]
@@ -10,21 +11,18 @@ displayName = "${modName}"
 authors = "${modAuthor}"
 description = "${modDescription}"
 logoFile = "icon.png"
-displayURL = "https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-forge"
 
 [[dependencies.${ modId }]]
 modId = "forge"
 mandatory = true
-versionRange = "[46,)"
+versionRange = "[${forgeVersion},)"
 
 [[dependencies.${ modId }]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,)"
+versionRange = "[${minecraftVersion},)"
 
 [[dependencies.${ modId }]]
 modId = "friendsandfoes"
 mandatory = true
-versionRange = "[1.9.0,)"
-ordering = "NONE"
-side = "BOTH"
+versionRange = "[2.0.7,)"
