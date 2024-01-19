@@ -77,7 +77,7 @@ jobs:
 
                     list=$(echo "$changelog" | sed -n "/^## $tag/,/^## [0-9]/p" | sed -e '1d;$d' -e '/^$/d')
 
-                    echo "CHANGELOG=\"$list\"" >> $GITHUB_ENV
+                    echo "$list" > RELEASE_CHANGELOG.md
 
             -   name: "Create github release"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
@@ -86,7 +86,7 @@ jobs:
                     skipIfReleaseExists: true
                     tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} for Minecraft ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
-                    body: ${{ steps.parse-changelog.outputs.CHANGELOG }}
+                    bodyFile: RELEASE_CHANGELOG.md
 
             -   name: "Setup Gradle and run build"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
