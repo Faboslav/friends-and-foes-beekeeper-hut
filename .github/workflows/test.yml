@@ -1,4 +1,4 @@
-name: "Test dispatch"
+name: "Publish to Github, CurseForge and Modrinth"
 
 on:
     workflow_dispatch:
@@ -6,17 +6,36 @@ on:
 jobs:
     publish:
         runs-on: ubuntu-latest
-        name: "Publish to Github, CurseForge and Modrinth"
+        name: Publish ${{ matrix.branch }} ${{ matrix.mod_loader }}
         timeout-minutes: 60
         strategy:
             matrix:
-                mod-loader: [ Fabric, Forge ]
+                branch: [1.19.2, 1.19.3, 1.19.4, 1.20.1, 1.20.2, 1.20.4]
+                mod_loader: [ quilt, fabric, forge, neoforge ]
+                include:
+                    -   mod_loader: quilt
+                        curseforge_id: 0
+                        modrinth_id: 0
+                    -   mod_loader: fabric
+                        curseforge_id: 0
+                        modrinth_id: 0
+                    -   mod_loader: forge
+                        curseforge_id: 0
+                        modrinth_id: 0
+                    -   mod_loader: neoforge
+                        curseforge_id: 0
+                        modrinth_id: 0
 
         steps:
             -   name: "Checkout repository"
                 uses: actions/checkout@v4.1.1
                 with:
+                    ref:  ${{ matrix.branch }}
                     fetch-depth: 0
+
+            -   name: "Check if the mod loader is supported"
+                run: |
+                    [ ! -d ${{ matrix.mod_loader }} ] && exit 0
 
             -   name: "Set up JDK"
                 uses: actions/setup-java@v4.0.0
