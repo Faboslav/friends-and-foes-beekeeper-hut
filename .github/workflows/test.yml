@@ -47,6 +47,6 @@ jobs:
 
             -   name: "Show parsed properties"
                 run: |
-                    echo "Minecraft Version: "$({{ steps.gradle-properties.outputs.MINECRAFT_VERSION }})\""
-                    echo "Mod Name: \"$({{ steps.gradle-properties.outputs.MOD_NAME }})\""
-                    echo "Mod Version: "$({{ steps.gradle-properties.outputs.MOD_VERSION }})\""
+                    echo "Minecraft Version: ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}"
+                    echo "Mod Name: ${{ steps.gradle-properties.outputs.MOD_NAME }}"
+                    echo "Mod Version: ${{ steps.gradle-properties.outputs.MOD_NAME }}"
