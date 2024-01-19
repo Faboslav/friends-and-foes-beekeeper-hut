@@ -106,4 +106,4 @@ jobs:
 
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
                     files: |
-                        ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|sources|javadoc)).jar
+                        ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
