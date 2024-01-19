@@ -3,8 +3,6 @@ name: "Publish"
 on:
     workflow_dispatch:
         workflows: ["Publish"]
-        types:
-            - completed
 
 jobs:
     publish:
@@ -84,6 +82,7 @@ jobs:
 
             -   name: "Create github release"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
+                continue-on-error: true
                 uses: ncipollo/release-action@v1
                 with:
                     skipIfReleaseExists: true
