@@ -32,26 +32,21 @@ jobs:
                     arguments: ${{ matrix.mod_loader }}:build
 
             -   name: "Parse Gradle Properties"
-                id: parse-properties
+                id: gradle-properties
                 run: |
                   while IFS='=' read -r key value; do
                     key=$(echo $key | awk '{$1=$1;print}')
                       value=$(echo $value | awk '{$1=$1;print}')
 
                       case "$key" in
-                        minecraft_version) echo "::set-output name=MINECRAFT_VERSION::$value" ;;
-                        mod_name) echo "::set-output name=MOD_NAME::$value" ;;
-                        mod_version) echo "::set-output name=MOD_VERSION::$value" ;;
+                        minecraft_version) echo "MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                        mod_name) echo "MOD_NAME=$value" >> $GITHUB_OUTPUT ;;
+                        mod_version) echo "MOD_VERSION=$value" >> $GITHUB_OUTPUT ;;
                       esac
                   done < gradle.properties
 
-                env:
-                    MINECRAFT_VERSION: ${{ steps.parse-properties.outputs.MINECRAFT_VERSION }}
-                    MOD_NAME: ${{ steps.parse-properties.outputs.MOD_NAME }}
-                    MOD_VERSION: ${{ steps.parse-properties.outputs.MOD_VERSION }}
-
             -   name: "Show parsed properties"
                 run: |
-                    echo "Minecraft Version: $MINECRAFT_VERSION"
-                    echo "Mod Name: $MOD_NAME"
-                    echo "Mod Version: $MOD_VERSION"
+                    echo "Minecraft Version: ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
+                    echo "Mod Name: ${{ steps.gradle-properties.outputs.MOD_NAME }}
+                    echo "Mod Version: ${{ steps.gradle-properties.outputs.MOD_VERSION }}
