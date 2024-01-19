@@ -84,6 +84,9 @@ jobs:
                 uses: ncipollo/release-action@v1
                 with:
                     skipIfReleaseExists: true
+                    allowUpdates: true
+                    omitNameDuringUpdate: true
+                    omitBodyDuringUpdate: true
                     tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} for Minecraft ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
                     bodyFile: RELEASE_CHANGELOG.md
