@@ -9,6 +9,7 @@ jobs:
         name: Publish ${{ matrix.branch }} ${{ matrix.mod_loader }}
         timeout-minutes: 60
         strategy:
+            fail-fast: false
             matrix:
                 branch: [1.19.2, 1.19.3, 1.19.4, 1.20.1, 1.20.2, 1.20.4]
                 mod_loader: [ quilt, fabric, forge, neoforge ]
@@ -34,10 +35,8 @@ jobs:
                     fetch-depth: 0
 
             -   name: "Check if the mod loader is supported"
-                run: |
-                    if [ ! -d ${{ matrix.mod_loader }} ]; then
-                      exit 0
-                    fi
+                if: ! -d ${{ matrix.mod_loader }}
+                run: exit 0
 
             -   name: "Set up JDK"
                 uses: actions/setup-java@v4.0.0
