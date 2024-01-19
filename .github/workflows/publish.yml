@@ -1,7 +1,10 @@
-name: "Publish to Github, CurseForge and Modrinth"
+name: "Publish"
 
 on:
     workflow_dispatch:
+        workflows: ["Publish"]
+        types:
+            - completed
 
 jobs:
     publish:
