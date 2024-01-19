@@ -39,9 +39,9 @@ jobs:
                       value=$(echo $value | awk '{$1=$1;print}')
 
                       case "$key" in
-                        minecraft_version) MINECRAFT_VERSION="$value" ;;
-                        mod_name) MOD_NAME="$value" ;;
-                        mod_version) MOD_VERSION="$value" ;;
+                        minecraft_version) echo "::set-output name=MINECRAFT_VERSION::$value" ;;
+                        mod_name) echo "::set-output name=MOD_NAME::$value" ;;
+                        mod_version) echo "::set-output name=MOD_VERSION::$value" ;;
                       esac
                   done < gradle.properties
 
