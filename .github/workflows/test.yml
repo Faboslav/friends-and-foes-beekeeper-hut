@@ -34,14 +34,16 @@ jobs:
             -   name: "Parse Gradle Properties"
                 id: parse-properties
                 run: |
-                    # Parse Gradle properties file and set variables
-                    while IFS='=' read -r key value; do
-                        case "$key" in
-                            minecraft_version) MINECRAFT_VERSION="$value" ;;
-                            mod_name) MOD_NAME="$value" ;;
-                            mod_version) MOD_VERSION="$value" ;;
-                        esac
-                    done < gradle.properties
+                  while IFS='=' read -r key value; do
+                    key=$(echo $key | awk '{$1=$1;print}')
+                      value=$(echo $value | awk '{$1=$1;print}')
+
+                      case "$key" in
+                        minecraft_version) MINECRAFT_VERSION="$value" ;;
+                        mod_name) MOD_NAME="$value" ;;
+                        mod_version) MOD_VERSION="$value" ;;
+                      esac
+                  done < gradle.properties
 
                 env:
                     MINECRAFT_VERSION: ${{ steps.parse-properties.outputs.MINECRAFT_VERSION }}
