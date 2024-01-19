@@ -77,7 +77,7 @@ jobs:
 
                     list=$(echo "$changelog" | sed -n "/^## $tag/,/^## [0-9]/p" | sed -e '1d;$d' -e '/^$/d')
 
-                    echo "CHANGELOG=$value" >> $GITHUB_OUTPUT
+                    echo "CHANGELOG=$list" >> $GITHUB_OUTPUT
 
             -   name: "Create github release"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
@@ -93,7 +93,7 @@ jobs:
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
                     cache-read-only: true
-                    generate-job-summary: 'never'
+                    generate-job-summary: false
                     gradle-version: wrapper
                     arguments: ${{ matrix.mod_loader }}:build
 
