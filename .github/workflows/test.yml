@@ -35,7 +35,9 @@ jobs:
 
             -   name: "Check if the mod loader is supported"
                 run: |
-                    [ ! -d ${{ matrix.mod_loader }} ] && exit 0
+                    if [ ! -d ${{ matrix.mod_loader }} ]; then
+                      exit 0
+                    fi
 
             -   name: "Set up JDK"
                 uses: actions/setup-java@v4.0.0
