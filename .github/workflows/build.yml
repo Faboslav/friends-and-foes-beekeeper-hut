@@ -12,8 +12,13 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                mod_loader: [fabric, forge]
+                script: [client, server]
 
-        name: "Build"
+        name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}
         timeout-minutes: 15
 
         steps:
@@ -28,34 +33,12 @@ jobs:
                     java-version: 17
                     distribution: temurin
 
-            -   name: "Setup Gradle"
+            -   name: "Setup Gradle and run build"
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
                     cache-read-only: false
-
-            -   name: "Run Gradle build"
-                run: ./gradlew build --no-daemon
-
-    run-minecraft:
-        needs: build
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                mod_loader: [fabric, forge]
-                script: [client, server]
-
-        name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}
-        timeout-minutes: 15
-
-        steps:
-            -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
-                with:
-                    fetch-depth: 0
-
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
+                    gradle-version: wrapper
+                    arguments: ${{ matrix.mod_loader }}:build
 
             -   name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}
                 uses: modmuss50/xvfb-action@v1
