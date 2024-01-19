@@ -75,7 +75,7 @@ jobs:
                     changelog=$(cat CHANGELOG.md)
                     tag=${{ steps.gradle-properties.outputs.MOD_VERSION }}
 
-                    list=$(echo "$changelog" | sed -n "/^## $tag/,/^## [0-9]/p" | sed -e '1d;$d' -e '/^$/d')
+                    list=$(echo "$changelog" | sed -n "/^## $tag/,/^## [0-9]/p" | sed -e '1d;$d' -e '/^$/d' | sed 's/^- //')
 
                     echo "CHANGELOG=$list" >> $GITHUB_OUTPUT
 
