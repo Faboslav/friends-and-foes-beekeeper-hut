@@ -4,6 +4,7 @@ on:
     release:
         types: [ published ]
 
+<<<<<<< HEAD
 env:
     VERSION_TYPE: release
     JAVA_VERSIONS: |
@@ -17,11 +18,16 @@ env:
     FORGE_DEPENDENCIES: |
         friends-and-foes-forge | depends | *
 
+=======
+>>>>>>> 1.19.2
 jobs:
-    build:
+    publish:
         runs-on: ubuntu-latest
-        name: "Build"
-        timeout-minutes: 15
+        name: "Publish to Github, CurseForge and Modrinth"
+        timeout-minutes: 60
+        strategy:
+            matrix:
+                mod-loader: [ Fabric, Forge ]
 
         steps:
             -   name: "Checkout repository"
@@ -38,31 +44,49 @@ jobs:
             -   name: "Setup Gradle"
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
-                    cache-read-only: false
+                    cache-read-only: true
+                    gradle-version: wrapper
+                    arguments: ${{ matrix.mod_loader }}:build
 
-            -   name: "Run Gradle build"
-                run: ./gradlew build --no-daemon
+            -   name: "Parse Gradle Properties"
+                id: parse-properties
+                run: |
+                    # Parse Gradle properties file and set variables
+                    while IFS='=' read -r key value; do
+                        case "$key" in
+                            minecraft_version) MINECRAFT_VERSION="$value" ;;
+                            mod_name) MOD_NAME="$value" ;;
+                            mod_version) MOD_VERSION="$value" ;;
+                        esac
+                    done < gradle.properties
 
-            -   name: "Capture build artifacts"
-                uses: actions/upload-artifact@v4.1.0
+                env:
+                    MINECRAFT_VERSION: ${{ steps.parse-properties.outputs.MINECRAFT_VERSION }}
+                    MOD_NAME: ${{ steps.parse-properties.outputs.MOD_NAME }}
+                    MOD_VERSION: ${{ steps.parse-properties.outputs.MOD_VERSION }}
+
+            -   name: "Show parsed properties"
+                run: |
+                    echo "Minecraft Version: $MINECRAFT_VERSION"
+                    echo "Mod Name: $MOD_NAME"
+                    echo "Mod Version: $MOD_VERSION"
+
+            -   name: "Publish Fabric to Github, CurseForge and Modrinth"
+                uses: Kir-Antipov/mc-publish@v3.3.0
                 with:
-                    name: "friends-and-foes-beekeeper-hut"
-                    path: |
-                        fabric/build/libs/friendsandfoes-beekeeperhut-fabric-${{ github.ref_name }}.jar
-                        forge/build/libs/friendsandfoes-beekeeperhut-forge-${{ github.ref_name }}.jar
-                        LICENSE.txt
+                    github-token: ${{ secrets.GITHUB_TOKEN }}
 
-    publish-license:
-        needs: build
-        runs-on: ubuntu-latest
-        name: "Publish license to GitHub"
-        timeout-minutes: 10
+                    curseforge-id: 779833
+                    curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
 
-        steps:
-            -   name: "Download artifacts"
-                uses: actions/download-artifact@v4.1.1
-                with:
-                    name: "friends-and-foes-beekeeper-hut"
+                    modrinth-id: ECOSu6pa
+                    modrinth-featured: true
+                    modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
+
+                    files: fabric/build/libs/${{ vars.MOD_FILE_NAME }}-fabric-${{ github.ref_name }}.jar
+                    loaders: fabric
+                    name: ${{ vars.MOD_NAME }} ${{ github.ref_name }} (Fabric/Quilt)
+                    version: fabric-${{ github.ref_name }}
 
             -   name: "Publish license to GitHub"
                 uses: AButler/upload-release-assets@v3.0
@@ -80,7 +104,7 @@ jobs:
             -   name: "Download artifacts"
                 uses: actions/download-artifact@v4.1.1
                 with:
-                    name: "friends-and-foes-beekeeper-hut"
+                    name: ${{ vars.MOD_SLUG }}
 
             -   name: "Publish Fabric to Github, CurseForge and Modrinth"
                 uses: Kir-Antipov/mc-publish@v3.3.0
@@ -94,16 +118,12 @@ jobs:
                     modrinth-featured: true
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
 
-                    files: fabric/build/libs/friendsandfoes-beekeeper-fabric-${{ github.ref_name }}.jar
-                    version-type: ${{ env.VERSION_TYPE }}
+                    files: fabric/build/libs/${{ vars.MOD_FILE_NAME }}-fabric-${{ github.ref_name }}.jar
                     loaders: fabric
-                    game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Friends&Foes - Beekeeper Hut ${{ github.ref_name }} (Fabric/Quilt)
+                    name: ${{ vars.MOD_NAME }} ${{ github.ref_name }} (Fabric/Quilt)
                     version: fabric-${{ github.ref_name }}
-                    dependencies: ${{ env.FABRIC_DEPENDENCIES }}
-                    java: ${{ env.JAVA_VERSIONS }}
 
-    publish-forge:
+    publish:
         needs: build
         runs-on: ubuntu-latest
         name: "Publish Forge to Github, CurseForge and Modrinth"
@@ -113,7 +133,7 @@ jobs:
             -   name: "Download artifacts"
                 uses: actions/download-artifact@v4.1.1
                 with:
-                    name: "friends-and-foes-beekeeper-hut"
+                    name: ${{ vars.MOD_SLUG }}
 
             -   name: "Publish Forge to Github, CurseForge and Modrinth"
                 uses: Kir-Antipov/mc-publish@v3.3.0
@@ -127,12 +147,11 @@ jobs:
                     modrinth-featured: true
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
 
-                    files: forge/build/libs/friendsandfoes-beekeeper-forge-${{ github.ref_name }}.jar
-                    version-type: ${{ env.VERSION_TYPE }}
+                    files: forge/build/libs/${{ vars.MOD_FILE_NAME }}-forge-${{ github.ref_name }}.jar
                     loaders: forge
-                    game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Friends&Foes - Beekeeper Hut ${{ github.ref_name }} (Forge)
+                    name: ${{ vars.MOD_NAME }} ${{ github.ref_name }} (Forge)
                     version: forge-${{ github.ref_name }}
+<<<<<<< HEAD
                     dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
 
@@ -168,3 +187,5 @@ jobs:
                     version: neoforge-${{ github.ref_name }}
                     dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
+=======
+>>>>>>> 1.20.1
