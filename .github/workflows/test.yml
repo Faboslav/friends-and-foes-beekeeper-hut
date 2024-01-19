@@ -35,7 +35,7 @@ jobs:
                     fetch-depth: 0
 
             -   name: "Check if the mod loader is supported"
-                if: ! -d ${{ matrix.mod_loader }}
+                if: '! -d "${{ matrix.mod_loader }}"'
                 run: exit 0
 
             -   name: "Set up JDK"
