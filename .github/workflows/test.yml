@@ -9,6 +9,7 @@ jobs:
         name: Publish ${{ matrix.branch }} ${{ matrix.mod_loader }}
         timeout-minutes: 60
         strategy:
+            max-parallel: 4
             fail-fast: false
             matrix:
                 branch: [1.19.2, 1.19.3, 1.19.4, 1.20.1, 1.20.2, 1.20.4]
@@ -40,7 +41,7 @@ jobs:
                         echo "Directory exists, continuing..."
                     else
                         echo "Directory does not exist, exiting..."
-                        exit 0
+                        exit 1
                     fi
 
             -   name: "Set up JDK"
