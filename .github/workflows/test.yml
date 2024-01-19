@@ -37,10 +37,10 @@ jobs:
 
             -   name: "Check if the mod loader is supported"
                 run: |
-                    if [ -d "quilt" ]; then
-                        echo "Directory exists, continuing..."
+                    if [ -d ${{ matrix.mod_loader }} ]; then
+                        echo "Mod loader is supported, continuing..."
                     else
-                        echo "Directory does not exist, exiting..."
+                        echo "Mod loader is not supported, exiting..."
                         exit 1
                     fi
 
