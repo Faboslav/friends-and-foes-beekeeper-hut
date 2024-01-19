@@ -13,7 +13,7 @@ jobs:
             fail-fast: false
             matrix:
                 branch: [1.19.2, 1.19.3, 1.19.4, 1.20.1, 1.20.2, 1.20.4]
-                mod_loader: [ quilt, fabric, forge, neoforge ]
+                mod_loader: [ fabric, quilt, forge, neoforge ]
                 include:
                     -   mod_loader: quilt
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
@@ -53,29 +53,20 @@ jobs:
                     java-version: 17
                     distribution: temurin
 
-            -   name: "Setup Gradle"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                uses: gradle/gradle-build-action@v2.11.1
-                with:
-                    cache-read-only: true
-                    generate-job-summary: 'never'
-                    gradle-version: wrapper
-                    arguments: ${{ matrix.mod_loader }}:build
-
             -   name: "Parse Gradle Properties"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 id: gradle-properties
                 run: |
-                  while IFS='=' read -r key value; do
-                    key=$(echo $key | awk '{$1=$1;print}')
-                      value=$(echo $value | awk '{$1=$1;print}')
-
-                      case "$key" in
-                        minecraft_version) echo "MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                        mod_name) echo "MOD_NAME=$value" >> $GITHUB_OUTPUT ;;
-                        mod_version) echo "MOD_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                      esac
-                  done < gradle.properties
+                    while IFS='=' read -r key value; do
+                      key=$(echo $key | awk '{$1=$1;print}')
+                        value=$(echo $value | awk '{$1=$1;print}')
+                    
+                        case "$key" in
+                          minecraft_version) echo "MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                          mod_name) echo "MOD_NAME=$value" >> $GITHUB_OUTPUT ;;
+                          mod_version) echo "MOD_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                        esac
+                    done < gradle.properties
 
             -   name: "Parse Changelog"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
@@ -94,8 +85,17 @@ jobs:
                 with:
                     skipIfReleaseExists: true
                     tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    body: ${{ steps.parse-changelog.outputs.MOD_VERSION }}
+                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} for Minecraft ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
+                    body: ${{ steps.parse-changelog.outputs.CHANGELOG }}
+
+            -   name: "Setup Gradle and run build"
+                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
+                uses: gradle/gradle-build-action@v2.11.1
+                with:
+                    cache-read-only: true
+                    generate-job-summary: 'never'
+                    gradle-version: wrapper
+                    arguments: ${{ matrix.mod_loader }}:build
 
             -   name: Publish ${{ matrix.mod_loader }}
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
@@ -106,13 +106,4 @@ jobs:
 
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
                     files: |
-                        ${{ matrix.mod-loader }}/build/libs/!(*-@(dev|sources|javadoc)).jar
-
-            -   name: "Show parsed properties"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                run: |
-                    echo "Minecraft Version: ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}"
-                    echo "Mod Name: ${{ steps.gradle-properties.outputs.MOD_NAME }}"
-                    echo "Mod Version: ${{ steps.gradle-properties.outputs.MOD_VERSION }}"
-                    echo "Curseforge id: ${{ matrix.curseforge_id }}"
-                    echo "Modrinth id: ${{ matrix.modrinth_id }}"
+                        ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|sources|javadoc)).jar
