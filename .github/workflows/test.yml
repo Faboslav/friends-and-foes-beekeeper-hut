@@ -1,0 +1,55 @@
+name: "Publish"
+
+on:
+    workflow_dispatch:
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        name: "Publish to Github, CurseForge and Modrinth"
+        timeout-minutes: 60
+        strategy:
+            matrix:
+                mod-loader: [ Fabric, Forge ]
+
+        steps:
+            -   name: "Checkout repository"
+                uses: actions/checkout@v4.1.1
+                with:
+                    fetch-depth: 0
+
+            -   name: "Set up JDK"
+                uses: actions/setup-java@v4.0.0
+                with:
+                    java-version: 17
+                    distribution: temurin
+
+            -   name: "Setup Gradle"
+                uses: gradle/gradle-build-action@v2.11.1
+                with:
+                    cache-read-only: true
+                    gradle-version: wrapper
+                    arguments: ${{ matrix.mod_loader }}:build
+
+            -   name: "Parse Gradle Properties"
+                id: parse-properties
+                run: |
+                    # Parse Gradle properties file and set variables
+                    while IFS='=' read -r key value; do
+                        case "$key" in
+                            minecraft_version) MINECRAFT_VERSION="$value" ;;
+                            mod_name) MOD_NAME="$value" ;;
+                            mod_version) MOD_VERSION="$value" ;;
+                        esac
+                    done < gradle.properties
+
+                env:
+                    MINECRAFT_VERSION: ${{ steps.parse-properties.outputs.MINECRAFT_VERSION }}
+                    MOD_NAME: ${{ steps.parse-properties.outputs.MOD_NAME }}
+                    MOD_VERSION: ${{ steps.parse-properties.outputs.MOD_VERSION }}
+
+            -   name: "Show parsed properties"
+                run: |
+                    echo "Minecraft Version: $MINECRAFT_VERSION"
+                    echo "Mod Name: $MOD_NAME"
+                    echo "Mod Version: $MOD_VERSION"
