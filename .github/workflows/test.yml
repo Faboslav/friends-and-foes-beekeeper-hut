@@ -54,6 +54,7 @@ jobs:
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
                     cache-read-only: true
+                    add-job-summary: 'never'
                     gradle-version: wrapper
                     arguments: ${{ matrix.mod_loader }}:build
 
