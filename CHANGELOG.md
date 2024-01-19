@@ -1,6 +1,7 @@
 ## 2.0.0
 
 - Bumped friends&foes required version to 2.0.7
+- Ported to all 1.20.x versions
 
 ## 1.3.0
 
