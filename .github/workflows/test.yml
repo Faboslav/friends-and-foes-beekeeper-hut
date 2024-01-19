@@ -35,8 +35,13 @@ jobs:
                     fetch-depth: 0
 
             -   name: "Check if the mod loader is supported"
-                if: '! -d ${{ matrix.mod_loader }}'
-                run: echo "not supported"
+                run: |
+                    if [ -d "fabric" ]; then
+                        echo "Directory exists, continuing..."
+                    else
+                        echo "Directory does not exist, exiting..."
+                        exit 0
+                    fi
 
             -   name: "Set up JDK"
                 uses: actions/setup-java@v4.0.0
