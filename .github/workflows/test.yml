@@ -36,7 +36,7 @@ jobs:
 
             -   name: "Check if the mod loader is supported"
                 run: |
-                    if [ -d "fabric" ]; then
+                    if [ -d "quilt" ]; then
                         echo "Directory exists, continuing..."
                     else
                         echo "Directory does not exist, exiting..."
