@@ -16,11 +16,6 @@
 
 - Ported to 1.19.3
 
-## 1.2.0
-
-- Fixed crash on quilt startup
-- Fixed mixins warning
-
 ## 1.0.0
 
 - Added Beeekeper Hut structure
