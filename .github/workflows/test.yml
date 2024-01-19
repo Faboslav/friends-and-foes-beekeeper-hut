@@ -35,8 +35,8 @@ jobs:
                     fetch-depth: 0
 
             -   name: "Check if the mod loader is supported"
-                if: '! -d "${{ matrix.mod_loader }}"'
-                run: exit 0
+                if: '! -d ${{ matrix.mod_loader }}'
+                run: echo "not supported"
 
             -   name: "Set up JDK"
                 uses: actions/setup-java@v4.0.0
