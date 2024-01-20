@@ -136,7 +136,7 @@ jobs:
 
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
                     version: ${{ matrix.mod_loader }}-mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    loaders: ${{ matrix.supported_mod_loaders }}
+                    loaders: ${{ join(matrix.supported_mod_loaders, '\n') }}
                     files: |
                         ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
 
