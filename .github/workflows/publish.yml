@@ -6,7 +6,7 @@ on:
             mod_loaders:
                 description: 'List of mod loaders to be published'
                 required: true
-                default: "['fabric', 'forge', 'neoforge' ]"
+                default: "['fabric', 'forge', 'neoforge']"
                 type: string
             branches:
                 description: 'List of branches to be published'
@@ -26,36 +26,36 @@ jobs:
                 branch: ${{ fromJson(inputs.branches) }}
                 mod_loader: ${{ fromJson(inputs.mod_loaders) }}
                 include:
-                    -   mod_loader: fabric
-                        supported_mod_loaders: [fabric, quilt]
+                    -   mod_loader: "fabric"
+                        supported_mod_loaders: ["fabric, quilt"]
                         secondary_game_version: ""
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
 
-                    -   mod_loader: forge
-                        supported_mod_loaders: [forge]
+                    -   mod_loader: "forge"
+                        supported_mod_loaders: ["forge"]
                         secondary_game_version: ""
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
-                    -   mod_loader: neoforge
-                        supported_mod_loaders: [neoforge]
+                    -   mod_loader: "neoforge"
+                        supported_mod_loaders: ["neoforge"]
                         secondary_game_version: ""
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
-                    -   branch: 1.20.1
-                        mod_loader: forge
-                        supported_mod_loaders: [forge, neoforge]
-                        secondary_game_version: 1.20
+                    -   branch: "1.20.1"
+                        mod_loader: "forge"
+                        supported_mod_loaders: ["forge", "neoforge"]
+                        secondary_game_version: "1.20"
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
-                    -   branch: 1.20.1
-                        secondary_game_version: 1.20
+                    -   branch: "1.20.1"
+                        secondary_game_version: "1.20"
 
-                    -   branch: 1.20.4
-                        secondary_game_version: 1.20.3
+                    -   branch: "1.20.4"
+                        secondary_game_version: "1.20.3"
 
         steps:
             -   name: "Checkout repository"
