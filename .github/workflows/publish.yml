@@ -28,7 +28,6 @@ jobs:
                 include:
                     -   mod_loader: fabric
                         supported_mod_loaders: [fabric, quilt]
-                        supported_game_versions: [${{ matrix.branch }}]
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
 
