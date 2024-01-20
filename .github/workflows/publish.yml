@@ -146,8 +146,8 @@ jobs:
 
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
                     version: ${{ matrix.mod_loader }}-mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    loaders: ${{ join(matrix.supported_mod_loaders, '\n') }}
-                    game-versions: ${{ matrix.branch }}\n${{ matrix.secondary_game_version }}
+                    loaders: ${{ join(matrix.supported_mod_loaders, ' ') }}
+                    game-versions: "${{ matrix.branch }}\n${{ matrix.secondary_game_version }}"
                     files: |
                         ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
 
