@@ -162,32 +162,6 @@
 						"predicate_type": "minecraft:always_true"
 					},
 					"output_state": {
-						"Name": "minecraft:rose_bush"
-					}
-				},
-				{
-					"input_predicate": {
-						"block": "minecraft:poppy",
-						"predicate_type": "minecraft:random_block_match",
-						"probability": 0.04
-					},
-					"location_predicate": {
-						"predicate_type": "minecraft:always_true"
-					},
-					"output_state": {
-						"Name": "minecraft:peony"
-					}
-				},
-				{
-					"input_predicate": {
-						"block": "minecraft:poppy",
-						"predicate_type": "minecraft:random_block_match",
-						"probability": 0.04
-					},
-					"location_predicate": {
-						"predicate_type": "minecraft:always_true"
-					},
-					"output_state": {
 						"Name": "friendsandfoes:buttercup"
 					}
 				},
