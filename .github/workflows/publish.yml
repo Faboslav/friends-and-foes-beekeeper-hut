@@ -28,34 +28,34 @@ jobs:
                 include:
                     -   mod_loader: fabric
                         supported_mod_loaders: [fabric, quilt]
-                        supported_game_versions: [${{ matrix.branch }} ]
+                        supported_game_versions: [${{ matrix.branch }}]
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
 
                     -   mod_loader: forge
                         supported_mod_loaders: [forge]
-                        supported_game_versions: [${{ matrix.branch }} ]
+                        supported_game_versions: [${{ matrix.branch }}]
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
                     -   mod_loader: neoforge
                         supported_mod_loaders: [neoforge]
-                        supported_game_versions: [${{ matrix.branch }} ]
+                        supported_game_versions: [${{ matrix.branch }}]
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
                     -   branch: 1.20.1
                         mod_loader: forge
                         supported_mod_loaders: [forge, neoforge]
-                        supported_game_versions: [1.20, ${{ matrix.branch }} ]
+                        supported_game_versions: [1.20, ${{ matrix.branch }}]
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
                     -   branch: 1.20.1
-                        supported_game_versions: [1.20, ${{ matrix.branch }} ]
+                        supported_game_versions: [1.20, ${{ matrix.branch }}]
 
                     -   branch: 1.20.4
-                        supported_game_versions: [ 1.20.3, ${ { matrix.branch } } ]
+                        supported_game_versions: [ 1.20.3, ${{ matrix.branch }}]
 
         steps:
             -   name: "Checkout repository"
