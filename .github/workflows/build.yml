@@ -50,58 +50,8 @@ jobs:
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
                     cache-read-only: false
-<<<<<<< HEAD
-
-            -   name: "Run Gradle build"
-                run: ./gradlew build --no-daemon
-
-    run-client:
-        needs: build
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                mod_loader: [ "fabric", "neoforge" ]
-        name: Run ${{ matrix.mod_loader }} client
-        timeout-minutes: 10
-
-        steps:
-            -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
-                with:
-                    fetch-depth: 0
-
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
-
-            -   name: Run ${{ matrix.mod_loader }} client
-                uses: modmuss50/xvfb-action@v1
-                with:
-                    run: ./.github/scripts/run-client.sh ${{ matrix.mod_loader }}
-                    shell: bash
-
-    run-server:
-        needs: build
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                mod_loader: [ "fabric", "neoforge" ]
-        name: Run ${{ matrix.mod_loader }} server
-        timeout-minutes: 10
-
-        steps:
-            -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
-                with:
-                    fetch-depth: 0
-
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
-=======
                     gradle-version: wrapper
                     arguments: ${{ matrix.mod_loader }}:build
->>>>>>> 1.20.1
 
             -   name: "Accept eula"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
