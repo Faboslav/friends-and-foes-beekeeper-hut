@@ -15,7 +15,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                mod_loader: [fabric, quilt, forge, neoforge]
+                mod_loader: [fabric, forge, neoforge]
                 script: [client, server]
 
         name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}

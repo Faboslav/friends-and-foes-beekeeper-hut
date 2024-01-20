@@ -2,7 +2,17 @@ name: "Publish"
 
 on:
     workflow_dispatch:
-        workflows: ["Publish"]
+        inputs:
+            mod_loaders:
+                description: 'List of mod loaders to be published'
+                required: true
+                default: "['fabric', 'forge', 'neoforge' ]"
+                type: string
+            branches:
+                description: 'List of branches to be published'
+                required: true
+                default: "['1.19.2', '1.19.3', '1.19.4', '1.20.1', '1.20.2', '1.20.4']"
+                type: string
 
 jobs:
     publish:
@@ -10,22 +20,30 @@ jobs:
         name: Publish ${{ matrix.branch }} ${{ matrix.mod_loader }}
         timeout-minutes: 60
         strategy:
-            max-parallel: 4
+            max-parallel: 3
             fail-fast: false
             matrix:
-                branch: [1.19.2, 1.19.3, 1.19.4, 1.20.1, 1.20.2, 1.20.4]
-                mod_loader: [ fabric, quilt, forge, neoforge ]
+                branch: ${{ fromJson(inputs.branches) }}
+                mod_loader: ${{ fromJson(inputs.mod_loaders) }}
                 include:
-                    -   mod_loader: quilt
-                        curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
-                        modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
                     -   mod_loader: fabric
+                        supported_mod_loaders: [fabric, quilt]
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
+
                     -   mod_loader: forge
+                        supported_mod_loaders: [forge]
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
+
                     -   mod_loader: neoforge
+                        supported_mod_loaders: [neoforge]
+                        curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
+                        modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
+
+                    -   branch: 1.20.1
+                        mod_loader: forge
+                        supported_mod_loaders: [forge, neoforge]
                         curseforge_id: ${{ vars.CURSEFORGE_FORGE_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FORGE_PROJECT_ID }}
 
@@ -54,7 +72,7 @@ jobs:
                     java-version: 17
                     distribution: temurin
 
-            -   name: "Parse Gradle Properties"
+            -   name: "Parse gradle properties"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 id: gradle-properties
                 run: |
@@ -69,7 +87,7 @@ jobs:
                         esac
                     done < gradle.properties
 
-            -   name: "Parse Changelog"
+            -   name: "Parse changelog"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 id: parse-changelog
                 run: |
@@ -93,7 +111,7 @@ jobs:
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} for Minecraft ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
                     bodyFile: RELEASE_CHANGELOG.md
 
-            -   name: "Setup Gradle and run build"
+            -   name: "Setup gradle and run build"
                 if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 uses: gradle/gradle-build-action@v2.11.1
                 with:
@@ -109,7 +127,16 @@ jobs:
                     github-token: ${{ secrets.GITHUB_TOKEN }}
                     github-tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
 
-                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
+                    #curseforge-id: ${{ matrix.curseforge_id }}
+                    #curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
+
+                    #modrinth-id: ${{ matrix.modrinth_id }}
+                    #modrinth-featured: true
+                    #modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
+
+                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
+                    version: ${{ matrix.mod_loader }}-mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
+                    loaders: ${{ matrix.supported_mod_loaders }}
                     files: |
                         ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
 
@@ -123,4 +150,4 @@ jobs:
                 with:
                     accessed: true
                     created: true
-                    max-age: 86400
+                    max-age: 21600
