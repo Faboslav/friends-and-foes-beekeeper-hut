@@ -27,7 +27,7 @@ jobs:
                 mod_loader: ${{ fromJson(inputs.mod_loaders) }}
                 include:
                     -   mod_loader: "fabric"
-                        supported_mod_loaders: ["fabric, quilt"]
+                        supported_mod_loaders: ["fabric", "quilt"]
                         secondary_game_version: ""
                         curseforge_id: ${{ vars.CURSEFORGE_FABRIC_PROJECT_ID }}
                         modrinth_id: ${{ vars.MODRINTH_FABRIC_PROJECT_ID }}
@@ -144,10 +144,11 @@ jobs:
                     modrinth-featured: true
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
 
-                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} (${{ matrix.mod_loader }})
+                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }}
                     version: ${{ matrix.mod_loader }}-mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
                     loaders: ${{ join(matrix.supported_mod_loaders, ' ') }}
                     game-versions: "${{ matrix.branch }}\n${{ matrix.secondary_game_version }}"
+                    changelog-file: RELEASE_CHANGELOG.md
                     files: |
                         ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
 
