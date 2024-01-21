@@ -1,5 +1,6 @@
 ## 2.0.0
 
+- Fixed tall flower spawns
 - Bumped Friends&Foes required version to 2.0.7
 - Ported to all 1.20.x versions
 
