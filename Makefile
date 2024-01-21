@@ -13,6 +13,9 @@ clean-cache: ## Cleans cache
 	rm -rf $GRADLE_HOME/caches/build-cache-*
 	./gradlew clean
 
+stop: ## Stops all deamons
+	./gradlew --stop
+
 gen-sources: ## Generate sources
 	./gradlew genSources
 
