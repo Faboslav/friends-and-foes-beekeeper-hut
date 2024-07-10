@@ -1,3 +1,8 @@
+## 2.0.1
+
+- Ported to 1.20.6/1.21
+- Internal refactor
+
 ## 2.0.0
 
 - Fixed tall flower spawns
