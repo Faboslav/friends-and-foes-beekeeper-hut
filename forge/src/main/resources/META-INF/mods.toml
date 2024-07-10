@@ -25,4 +25,4 @@ versionRange = "[${minecraftVersion},)"
 [[dependencies.${ modId }]]
 modId = "friendsandfoes"
 mandatory = true
-versionRange = "[${friendsandfoesVersion},)"
+versionRange = "[${friendsAndFoesVersion},)"
