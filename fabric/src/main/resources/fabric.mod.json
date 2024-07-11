@@ -23,10 +23,10 @@
 		]
 	},
 	"depends": {
-		"java": ">=17",
-		"minecraft": ">=${minecraftVersion}",
+		"java": ">=21",
+		"minecraft": ">=${minMinecraftVersion}",
 		"fabricloader": ">=${fabricLoaderVersion}",
 		"fabric": ">=${fabricApiVersion}",
-		"friendsandfoes": ">=2.0.7"
+		"friendsandfoes": ">=${friendsAndFoesVersion}"
 	}
 }
