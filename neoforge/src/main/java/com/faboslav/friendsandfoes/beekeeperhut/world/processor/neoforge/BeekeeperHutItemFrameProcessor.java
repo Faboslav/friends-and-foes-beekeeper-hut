@@ -3,6 +3,7 @@ package com.faboslav.friendsandfoes.beekeeperhut.world.processor.neoforge;
 import com.faboslav.friendsandfoes.beekeeperhut.platform.neoforge.StructureEntityProcessorTypesImpl;
 import com.faboslav.friendsandfoes.beekeeperhut.util.world.processor.BeekeeperHutItemFrameProcessorHelper;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
 import net.minecraft.structure.processor.StructureProcessor;
@@ -13,8 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
 {
-	public static final BeekeeperHutItemFrameProcessor INSTANCE = new BeekeeperHutItemFrameProcessor();
-	public static final Codec<BeekeeperHutItemFrameProcessor> CODEC = Codec.unit(() -> INSTANCE);
+	public static final MapCodec<BeekeeperHutItemFrameProcessor> CODEC = MapCodec.unit(BeekeeperHutItemFrameProcessor::new);
 
 	@Override
 	public StructureTemplate.StructureEntityInfo processEntity(
