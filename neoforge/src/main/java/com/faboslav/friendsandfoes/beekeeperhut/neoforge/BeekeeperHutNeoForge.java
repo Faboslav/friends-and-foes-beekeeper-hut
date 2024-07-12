@@ -11,7 +11,7 @@ public final class BeekeeperHutNeoForge
 {
 	public BeekeeperHutNeoForge(ModContainer modContainer, IEventBus modEventBus) {
 		BeekeeperHut.init();
-
+		
 		RegistryHelperImpl.STRUCTURE_PROCESSOR_TYPES.register(modEventBus);
 	}
 }
