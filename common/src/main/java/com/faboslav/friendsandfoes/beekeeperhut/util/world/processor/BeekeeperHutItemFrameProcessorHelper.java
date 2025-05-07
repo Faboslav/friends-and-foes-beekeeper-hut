@@ -1,28 +1,30 @@
 package com.faboslav.friendsandfoes.beekeeperhut.util.world.processor;
 
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.structure.StructurePlacementData;
-import net.minecraft.structure.StructureTemplate.StructureEntityInfo;
-import net.minecraft.util.math.random.Random;
+import com.faboslav.friendsandfoes.common.versions.VersionedNbt;
+import net.minecraft.Util;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureEntityInfo;
 
 /**
- * Inspired by use in Better Strongholds by
- * YUNGNICKYOUNG (https://github.com/YUNG-GANG/YUNGs-Better-Strongholds)
+ * Inspired by use in Better Strongholds mod
+ *
+ * @author YUNGNICKYOUNG
+ * <a href="https://github.com/YUNG-GANG/YUNGs-Better-Strongholds">https://github.com/YUNG-GANG/YUNGs-Better-Strongholds</a>
  */
 public final class BeekeeperHutItemFrameProcessorHelper
 {
 	public static StructureEntityInfo processEntity(
 		StructureEntityInfo globalEntityInfo,
-		StructurePlacementData structurePlacementData
+		StructurePlaceSettings structurePlacementData
 	) {
-		if (globalEntityInfo.nbt.getString("id").equals("minecraft:item_frame") == false) {
+		if (!globalEntityInfo.nbt.getString("id").equals("minecraft:item_frame")) {
 			return globalEntityInfo;
 		}
 
-		Random random = structurePlacementData.getRandom(globalEntityInfo.blockPos);
-
-		NbtCompound newNbt = globalEntityInfo.nbt.copy();
-
+		RandomSource random = structurePlacementData.getRandom(globalEntityInfo.blockPos);
+		CompoundTag newNbt = globalEntityInfo.nbt.copy();
 		int randomRotation = random.nextInt(8);
 		newNbt.putByte("ItemRotation", (byte) randomRotation);
 

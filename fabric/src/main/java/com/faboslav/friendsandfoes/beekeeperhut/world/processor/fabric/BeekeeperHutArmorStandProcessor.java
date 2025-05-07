@@ -1,34 +1,38 @@
 package com.faboslav.friendsandfoes.beekeeperhut.world.processor.fabric;
 
-import com.faboslav.friendsandfoes.beekeeperhut.platform.fabric.StructureEntityProcessorTypesImpl;
+import com.faboslav.friendsandfoes.beekeeperhut.platform.fabric.ProcessorTypes;
 import com.faboslav.friendsandfoes.beekeeperhut.util.world.processor.BeekeeperHutArmorStandProcessorHelper;
-import com.faboslav.friendsandfoes.beekeeperhut.world.processor.StructureEntityProcessor;
-import com.mojang.serialization.Codec;
+import com.faboslav.friendsandfoes.common.world.processor.StructureEntityProcessor;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.structure.StructurePlacementData;
-import net.minecraft.structure.StructureTemplate;
-import net.minecraft.structure.processor.StructureProcessorType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Inspired by use in Better Strongholds by
- * YUNGNICKYOUNG (https://github.com/YUNG-GANG/YUNGs-Better-Strongholds)
+ * Inspired by use in Better Strongholds mod
+ *
+ * @author YUNGNICKYOUNG
+ * <a href="https://github.com/YUNG-GANG/YUNGs-Better-Strongholds">https://github.com/YUNG-GANG/YUNGs-Better-Strongholds</a>
  */
 public final class BeekeeperHutArmorStandProcessor extends StructureEntityProcessor
 {
 	public static final MapCodec<BeekeeperHutArmorStandProcessor> CODEC = MapCodec.unit(BeekeeperHutArmorStandProcessor::new);
 
+	private BeekeeperHutArmorStandProcessor() {
+	}
+
 	@Override
 	public StructureTemplate.StructureEntityInfo processEntity(
-		ServerWorldAccess serverWorldAccess,
+		ServerLevelAccessor serverWorldAccess,
 		BlockPos structurePiecePos,
 		BlockPos structurePieceBottomCenterPos,
 		StructureTemplate.StructureEntityInfo localEntityInfo,
 		StructureTemplate.StructureEntityInfo globalEntityInfo,
-		StructurePlacementData structurePlacementData
+		StructurePlaceSettings structurePlacementData
 	) {
 		return BeekeeperHutArmorStandProcessorHelper.processEntity(
 			globalEntityInfo,
@@ -38,19 +42,19 @@ public final class BeekeeperHutArmorStandProcessor extends StructureEntityProces
 
 	@Nullable
 	@Override
-	public StructureTemplate.StructureBlockInfo process(
-		WorldView world,
+	public StructureTemplate.StructureBlockInfo processBlock(
+		LevelReader world,
 		BlockPos pos,
 		BlockPos pivot,
 		StructureTemplate.StructureBlockInfo localEntityInfo,
 		StructureTemplate.StructureBlockInfo globalEntityInfo,
-		StructurePlacementData data
+		StructurePlaceSettings data
 	) {
 		return globalEntityInfo;
 	}
 
 	@Override
 	protected StructureProcessorType<?> getType() {
-		return StructureEntityProcessorTypesImpl.BEEKEEPER_HUT_ARMOR_STAND_PROCESSOR;
+		return ProcessorTypes.BEEKEEPER_HUT_ARMOR_STAND_PROCESSOR.get();
 	}
 }

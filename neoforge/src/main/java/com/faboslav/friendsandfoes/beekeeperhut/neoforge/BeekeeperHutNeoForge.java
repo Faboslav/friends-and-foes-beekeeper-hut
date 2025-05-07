@@ -1,7 +1,6 @@
 package com.faboslav.friendsandfoes.beekeeperhut.neoforge;
 
 import com.faboslav.friendsandfoes.beekeeperhut.BeekeeperHut;
-import com.faboslav.friendsandfoes.beekeeperhut.platform.neoforge.RegistryHelperImpl;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -11,7 +10,5 @@ public final class BeekeeperHutNeoForge
 {
 	public BeekeeperHutNeoForge(ModContainer modContainer, IEventBus modEventBus) {
 		BeekeeperHut.init();
-		
-		RegistryHelperImpl.STRUCTURE_PROCESSOR_TYPES.register(modEventBus);
 	}
 }

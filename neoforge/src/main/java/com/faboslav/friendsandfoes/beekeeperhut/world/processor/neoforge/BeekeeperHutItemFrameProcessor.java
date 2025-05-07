@@ -1,28 +1,36 @@
 package com.faboslav.friendsandfoes.beekeeperhut.world.processor.neoforge;
 
-import com.faboslav.friendsandfoes.beekeeperhut.platform.neoforge.StructureEntityProcessorTypesImpl;
+import com.faboslav.friendsandfoes.beekeeperhut.platform.neoforge.ProcessorTypes;
 import com.faboslav.friendsandfoes.beekeeperhut.util.world.processor.BeekeeperHutItemFrameProcessorHelper;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.structure.StructurePlacementData;
-import net.minecraft.structure.StructureTemplate;
-import net.minecraft.structure.processor.StructureProcessor;
-import net.minecraft.structure.processor.StructureProcessorType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Inspired by use in Better Strongholds mod
+ *
+ * @author YUNGNICKYOUNG
+ * <a href="https://github.com/YUNG-GANG/YUNGs-Better-Strongholds">https://github.com/YUNG-GANG/YUNGs-Better-Strongholds</a>
+ */
 public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
 {
 	public static final MapCodec<BeekeeperHutItemFrameProcessor> CODEC = MapCodec.unit(BeekeeperHutItemFrameProcessor::new);
 
+	private BeekeeperHutItemFrameProcessor() {
+	}
+
 	@Override
 	public StructureTemplate.StructureEntityInfo processEntity(
-		WorldView world,
+		LevelReader world,
 		BlockPos seedPos,
 		StructureTemplate.StructureEntityInfo rawEntityInfo,
 		StructureTemplate.StructureEntityInfo entityInfo,
-		StructurePlacementData placementSettings,
+		StructurePlaceSettings placementSettings,
 		StructureTemplate template
 	) {
 		return BeekeeperHutItemFrameProcessorHelper.processEntity(
@@ -33,19 +41,19 @@ public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
 
 	@Nullable
 	@Override
-	public StructureTemplate.StructureBlockInfo process(
-		WorldView world,
+	public StructureTemplate.StructureBlockInfo processBlock(
+		LevelReader world,
 		BlockPos pos,
 		BlockPos pivot,
 		StructureTemplate.StructureBlockInfo localEntityInfo,
 		StructureTemplate.StructureBlockInfo globalEntityInfo,
-		StructurePlacementData data
+		StructurePlaceSettings data
 	) {
 		return globalEntityInfo;
 	}
 
 	@Override
 	protected StructureProcessorType<?> getType() {
-		return StructureEntityProcessorTypesImpl.BEEKEEPER_HUT_ITEM_FRAME_PROCESSOR;
+		return ProcessorTypes.BEEKEEPER_HUT_ITEM_FRAME_PROCESSOR.get();
 	}
 }

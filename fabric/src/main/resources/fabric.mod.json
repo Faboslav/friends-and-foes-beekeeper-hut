@@ -14,7 +14,7 @@
 		"wiki": "https://github.com/Faboslav/friends-and-foes/wiki",
 		"discord": "https://discord.com/invite/QGwFvvMQCn"
 	},
-	"license": "CC BY-NC-ND 4.0",
+	"license": "${modLicense}",
 	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -23,10 +23,16 @@
 		]
 	},
 	"depends": {
-		"java": ">=21",
-		"minecraft": ">=${minMinecraftVersion}",
-		"fabricloader": ">=${fabricLoaderVersion}",
-		"fabric": ">=${fabricApiVersion}",
+		"minecraft": ">=${minMinecraftVersion}-",
+		"fabricloader": "*",
+		"fabric": "*",
 		"friendsandfoes": ">=${friendsAndFoesVersion}"
+	},
+	"custom": {
+		"mc-publish": {
+			"dependencies": [
+				"friendsandfoes(required){curseforge:602059}{modrinth:POQ2i9zu}"
+			]
+		}
 	}
 }
