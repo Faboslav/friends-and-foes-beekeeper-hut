@@ -1,3 +1,8 @@
+## 3.0.1
+
+- Ported to 1.21.6
+- Updated graphic assets
+
 ## 2.0.1
 
 - Ported to 1.20.6/1.21
