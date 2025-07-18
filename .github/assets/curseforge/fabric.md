@@ -1,7 +1,7 @@
 <br>
 
 <p align="center" style="text-align: center;">
-	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" width="700px" alt="Friends&amp;Foes - Beekeeper Hut" title="Friends&amp;Foes - Beekeeper Hut">
+	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" width="100%" alt="Friends&amp;Foes - Beekeeper Hut" title="Friends&amp;Foes - Beekeeper Hut">
 </p>
 
 <br>
