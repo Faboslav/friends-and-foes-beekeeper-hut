@@ -48,8 +48,6 @@
 </ul>
 
 <br>
-
-<br>
 <br>
 
 <span style="font-size: 28px;color:#e5e5e5">💬 Community</span>
@@ -58,8 +56,6 @@
 <p style="font-size: 18px;">
 	<span style="font-size: 18px;">Feel free to <a href="https://discord.gg/QGwFvvMQCn">join our community at the discord server</a> to chat, share your creations, ask any question or to simply be updated about the latest development of the mod and notified when the new release is out. Also don't hesitate to <a href="https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues" style="font-size: 18px;">report any crash or bug via GitHub issues</a>.</span>
 </p>
-
-<br>
 
 <br>
 <br>
