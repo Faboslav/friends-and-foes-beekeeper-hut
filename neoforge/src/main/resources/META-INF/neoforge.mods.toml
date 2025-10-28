@@ -1,8 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "*"
 license = "${modLicense}"
-displayURL = "https://www.curseforge.com/minecraft/mc-mods/friends-and-foes-beekeeper-hut-forge"
-issueTrackerURL = "https://github.com/Faboslav/friends-and-foes-beekeeper-hut-beekeeper-hut/issues"
+issueTrackerURL = "${modGitHub}/issues"
 
 [[mods]]
 modId = "${modId}"
@@ -12,6 +11,7 @@ authors = "${modAuthor}"
 description = "${modDescription}"
 logoFile = "icon.png"
 logoBlur = false
+displayURL = "${modGitHub}"
 
 [[dependencies.${ modId }]]
 modId = "neoforge"

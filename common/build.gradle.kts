@@ -1,9 +1,7 @@
 plugins {
 	id("multiloader-common")
 	id("fabric-loom")
-	kotlin("jvm") version "2.2.0"
-	id("com.google.devtools.ksp") version "2.2.0-2.0.2"
-	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.20"
+	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.22"
 }
 
 fletchingTable {
@@ -21,8 +19,8 @@ dependencies {
 		}
 	})
 
-	modCompileOnly("net.fabricmc:fabric-loader:${commonMod.dep("fabric-loader")}")
-	modCompileOnly("com.teamresourceful.resourcefullib:resourcefullib-common-${commonMod.dep("resourceful-lib.mc")}:${commonMod.dep("resourceful-lib.lib")}")
+	modCompileOnly("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
+	modCompileOnly("com.teamresourceful.resourcefullib:resourcefullib-common-${commonMod.dep("resourceful_lib.mc")}:${commonMod.dep("resourceful_lib.lib")}")
 	modCompileOnly(commonMod.modrinth("friends-and-foes", "fabric-${commonMod.dep("friendsandfoes")}+mc${commonMod.mc}"))
 }
 

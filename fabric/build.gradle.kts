@@ -3,7 +3,7 @@ plugins {
 	`multiloader-loader`
 	kotlin("jvm") version "2.2.0"
 	id("com.google.devtools.ksp") version "2.2.0-2.0.2"
-	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.20"
+	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.22"
 }
 
 fletchingTable {
@@ -21,15 +21,15 @@ dependencies {
 		}
 	})
 
-	modImplementation("net.fabricmc:fabric-loader:${commonMod.dep("fabric-loader")}")
-	modApi("net.fabricmc.fabric-api:fabric-api:${commonMod.dep("fabric-api")}+${commonMod.mc}")
+	modImplementation("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
+	modApi("net.fabricmc.fabric-api:fabric-api:${commonMod.dep("fabric_api")}+${commonMod.mc}")
 
 	// Required dependencies
 	modImplementation(commonMod.modrinth("friends-and-foes", "fabric-${commonMod.dep("friendsandfoes")}+mc${commonMod.mc}"))
 	modImplementation(
-		"com.teamresourceful.resourcefullib:resourcefullib-fabric-${commonMod.dep("resourceful-lib.mc")}:${
+		"com.teamresourceful.resourcefullib:resourcefullib-fabric-${commonMod.dep("resourceful_lib.mc")}:${
 			commonMod.dep(
-				"resourceful-lib.lib"
+				"resourceful_lib.lib"
 			)
 		}"
 	)
