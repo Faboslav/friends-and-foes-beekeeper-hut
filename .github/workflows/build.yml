@@ -104,6 +104,17 @@ jobs:
             -   name: "Copy mod jar to run/mods"
                 run: mkdir -p run/mods && cp ./${{ matrix.mod_loader }}/versions/${{ matrix.version }}/build/libs/*.jar run/mods
 
+            -   name: "Download Friends&Foes"
+                run: |
+                    if [ "${{ matrix.mod_loader }}" = "fabric" ]; then
+                      MOD_NAME="friends-and-foes"
+                    else
+                      MOD_NAME="friends-and-foes-forge"
+                    fi
+                    
+                    MOD_URL=$(./.github/scripts/get-modrinth-dependency-url.sh "$MOD_NAME" "${{ matrix.mod_loader }}-${{ steps.gradle-properties.outputs.DEPS_FRIENDSANDFOES }}+mc${{ matrix.version }}" "${{ matrix.mod_loader }}")
+                    wget -P run/mods "$MOD_URL"
+
             -   name: "Download ResourcefulLib"
                 run: |
                     MOD_URL=$(./.github/scripts/get-modrinth-dependency-url.sh "resourceful-lib" "${{ steps.gradle-properties.outputs.DEPS_RESOURCEFUL_LIB_LIB }}" "${{ matrix.mod_loader }}")
@@ -162,6 +173,17 @@ jobs:
 
             -   name: "Copy mod jar to run/mods"
                 run: mkdir -p run/mods && cp ./${{ matrix.mod_loader }}/versions/${{ matrix.version }}/build/libs/*.jar run/mods
+
+            -   name: "Download Friends&Foes"
+                run: |
+                    if [ "${{ matrix.mod_loader }}" = "fabric" ]; then
+                      MOD_NAME="friends-and-foes"
+                    else
+                      MOD_NAME="friends-and-foes-forge"
+                    fi
+                    
+                    MOD_URL=$(./.github/scripts/get-modrinth-dependency-url.sh "$MOD_NAME" "${{ matrix.mod_loader }}-${{ steps.gradle-properties.outputs.DEPS_FRIENDSANDFOES }}+mc${{ matrix.version }}" "${{ matrix.mod_loader }}")
+                    wget -P run/mods "$MOD_URL"
 
             -   name: "Download ResourcefulLib"
                 run: |
