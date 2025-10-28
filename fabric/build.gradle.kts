@@ -1,8 +1,6 @@
 plugins {
 	id("fabric-loom")
-	`multiloader-loader`
-	kotlin("jvm") version "2.2.0"
-	id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+	id("multiloader-loader")
 	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.22"
 }
 
