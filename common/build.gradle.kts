@@ -1,7 +1,7 @@
 plugins {
 	id("multiloader-common")
-	id("fabric-loom")
-	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.22"
+	id("fabric-loom-compat")
+	id("dev.kikugie.fletching-table.fabric") version "0.1.0-alpha.23"
 }
 
 fletchingTable {
@@ -12,16 +12,24 @@ fletchingTable {
 
 dependencies {
 	minecraft(group = "com.mojang", name = "minecraft", version = commonMod.mc)
-	mappings(loom.layered {
-		officialMojangMappings()
-		commonMod.depOrNull("parchment")?.let { parchmentVersion ->
-			parchment("org.parchmentmc.data:parchment-${commonMod.mc}:$parchmentVersion@zip")
-		}
-	})
+
+	if (stonecutter.eval(commonMod.mc, "<=1.21.11")) {
+		mappings(loom.layered {
+			officialMojangMappings()
+			commonMod.depOrNull("parchment")?.let { parchmentVersion ->
+				parchment("org.parchmentmc.data:parchment-${commonMod.mc}:$parchmentVersion@zip")
+			}
+		})
+	}
 
 	modCompileOnly("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
-	modCompileOnly("com.teamresourceful.resourcefullib:resourcefullib-common-${commonMod.dep("resourceful_lib.mc")}:${commonMod.dep("resourceful_lib.lib")}")
-	modCompileOnly(commonMod.modrinth("friends-and-foes", "fabric-${commonMod.dep("friendsandfoes")}+mc${commonMod.mc}"))
+
+	// Required dependencies
+	val friendsAndFoesWithDeps: List<Dependency> = fletchingTable.modrinthBundle("friends-and-foes", commonMod.mc, "fabric") {
+		recursive = true
+		include("required", "optional", "embedded")
+	}
+	for (mod in friendsAndFoesWithDeps) modImplementation(mod)
 }
 
 val commonJava: Configuration by configurations.creating {
