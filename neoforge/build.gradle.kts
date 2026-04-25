@@ -20,7 +20,7 @@ dependencies {
 	// Required dependencies
 	val friendsAndFoesWithDeps: List<Dependency> = fletchingTable.modrinthBundle("friends-and-foes-forge", commonMod.mc, "neoforge") {
 		recursive = true
-		include("required", "optional", "embedded")
+		include("required")
 	}
 	for (mod in friendsAndFoesWithDeps) implementation(mod)
 }
