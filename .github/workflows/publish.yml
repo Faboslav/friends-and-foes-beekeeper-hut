@@ -37,11 +37,7 @@ jobs:
 
             -   name: "Parse gradle properties"
                 id: gradle-properties
-                uses: Faboslav/parse-gradle-properties@v1.0.1
-                with:
-                    files: |
-                        gradle.properties
-                        versions/${{ matrix.version }}/gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Parse changelog"
                 run: ./.github/scripts/parse-changelog.sh ${{ steps.gradle-properties.outputs.MOD_VERSION }}
@@ -92,11 +88,7 @@ jobs:
 
             -   name: "Parse gradle properties"
                 id: gradle-properties
-                uses: Faboslav/parse-gradle-properties@v1.0.1
-                with:
-                    files: |
-                        gradle.properties
-                        versions/${{ matrix.version }}/gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Parse changelog"
                 run: ./.github/scripts/parse-changelog.sh ${{ steps.gradle-properties.outputs.MOD_VERSION }}

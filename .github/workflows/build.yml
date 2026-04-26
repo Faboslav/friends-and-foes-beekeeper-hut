@@ -53,11 +53,7 @@ jobs:
 
             -   name: "Parse gradle properties"
                 id: gradle-properties
-                uses: Faboslav/parse-gradle-properties@v1.0.1
-                with:
-                    files: |
-                        gradle.properties
-                        versions/${{ matrix.version }}/gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Run build"
                 run: ./gradlew :${{ matrix.mod_loader }}:${{ matrix.version }}:build
@@ -92,11 +88,7 @@ jobs:
 
             -   name: "Parse gradle properties"
                 id: gradle-properties
-                uses: Faboslav/parse-gradle-properties@v1.0.1
-                with:
-                    files: |
-                        gradle.properties
-                        versions/${{ matrix.version }}/gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Download artifacts"
                 uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # 8.0.1
@@ -161,11 +153,7 @@ jobs:
 
             -   name: "Parse gradle properties"
                 id: gradle-properties
-                uses: Faboslav/parse-gradle-properties@v1.0.1
-                with:
-                    files: |
-                        gradle.properties
-                        versions/${{ matrix.version }}/gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Download artifacts"
                 uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # 8.0.1
