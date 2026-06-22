@@ -1,6 +1,5 @@
 <center>
-    <img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" title="Friends&Foes" alt="Friends&Foes">
-	<h1>Beekeeper Hut</h1>
+    <img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/logo/logo.png" title="Friends&Foes - Beekeeper Hut" alt="Friends&Foes - Beekeeper Hut">
 </center>
 
 ---

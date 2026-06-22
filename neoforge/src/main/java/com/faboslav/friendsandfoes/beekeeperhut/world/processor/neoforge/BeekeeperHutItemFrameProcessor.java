@@ -11,13 +11,15 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Inspired by use in Better Strongholds mod
- *
- * @author YUNGNICKYOUNG
- * <a href="https://github.com/YUNG-GANG/YUNGs-Better-Strongholds">https://github.com/YUNG-GANG/YUNGs-Better-Strongholds</a>
- */
-public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
+//? if <26.2 {
+/*import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+ *///?}
+
+//? if >=26.2 {
+public final class BeekeeperHutItemFrameProcessor implements StructureProcessor
+//?} else {
+/*public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
+*///?}
 {
 	public static final MapCodec<BeekeeperHutItemFrameProcessor> CODEC = MapCodec.unit(BeekeeperHutItemFrameProcessor::new);
 
@@ -41,19 +43,37 @@ public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
 
 	@Nullable
 	@Override
+	//? if >=26.2 {
 	public StructureTemplate.StructureBlockInfo processBlock(
+		LevelReader world,
+		BlockPos pos,
+		BlockPos pivot,
+		BlockPos templateRelativePos,
+		StructureTemplate.StructureBlockInfo globalEntityInfo,
+		StructurePlaceSettings data
+	)
+	//?} else {
+	/*public StructureTemplate.StructureBlockInfo processBlock(
 		LevelReader world,
 		BlockPos pos,
 		BlockPos pivot,
 		StructureTemplate.StructureBlockInfo localEntityInfo,
 		StructureTemplate.StructureBlockInfo globalEntityInfo,
 		StructurePlaceSettings data
-	) {
+	)
+	*///?}
+	{
 		return globalEntityInfo;
 	}
 
 	@Override
-	protected StructureProcessorType<?> getType() {
+	//? if >=26.2 {
+	public MapCodec<? extends StructureProcessor> codec() {
 		return ProcessorTypes.BEEKEEPER_HUT_ITEM_FRAME_PROCESSOR.get();
 	}
+	//?} else {
+	/*protected StructureProcessorType<?> getType() {
+		return ProcessorTypes.BEEKEEPER_HUT_ITEM_FRAME_PROCESSOR.get();
+	}
+	*///?}
 }

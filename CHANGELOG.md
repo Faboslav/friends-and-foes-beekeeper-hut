@@ -1,11 +1,11 @@
 ## 3.0.3
 
-Ported to 26.1.2
+- Ported to 26.1.2/26.2
 
 ## 3.0.2
 
-Ported to 1.21.8
-Fixed minecraft version restrictions (For example 1.21 should also work with 1.21.1 version)
+- Ported to 1.21.8
+- Fixed minecraft version restrictions (For example 1.21 should also work with 1.21.1 version)
 
 ## 3.0.1
 

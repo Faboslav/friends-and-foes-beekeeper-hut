@@ -8,9 +8,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.jetbrains.annotations.Nullable;
+
+//? if >= 26.2 {
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
+//?} else {
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+//?}
 
 public final class BeekeeperHutItemFrameProcessor extends StructureEntityProcessor
 {
@@ -24,11 +29,38 @@ public final class BeekeeperHutItemFrameProcessor extends StructureEntityProcess
 	}
 
 	@Nullable
-	public StructureTemplate.@Nullable StructureBlockInfo processBlock(LevelReader world, BlockPos pos, BlockPos pivot, StructureTemplate.StructureBlockInfo localEntityInfo, StructureTemplate.StructureBlockInfo globalEntityInfo, StructurePlaceSettings data) {
+	@Override
+	//? if >=26.2 {
+	public StructureTemplate.StructureBlockInfo processBlock(
+		LevelReader world,
+		BlockPos pos,
+		BlockPos pivot,
+		BlockPos templateRelativePos,
+		StructureTemplate.StructureBlockInfo globalEntityInfo,
+		StructurePlaceSettings data
+	)
+	//?} else {
+	/*public StructureTemplate.StructureBlockInfo processBlock(
+		LevelReader world,
+		BlockPos pos,
+		BlockPos pivot,
+		StructureTemplate.StructureBlockInfo localEntityInfo,
+		StructureTemplate.StructureBlockInfo globalEntityInfo,
+		StructurePlaceSettings data
+	)
+	*///?}
+	{
 		return globalEntityInfo;
 	}
 
-	protected StructureProcessorType<?> getType() {
+	@Override
+	//? if >=26.2 {
+	public MapCodec<? extends StructureProcessor> codec() {
 		return ProcessorTypes.BEEKEEPER_HUT_ITEM_FRAME_PROCESSOR.get();
 	}
+	//?} else {
+	/*protected StructureProcessorType<?> getType() {
+		return ProcessorTypes.BEEKEEPER_HUT_ARMOR_STAND_PROCESSOR.get();
+	}
+	*///?}
 }
