@@ -9,8 +9,8 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 //? if >=26.2 {
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 //?} else {
-/*import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
- *///?}
+//import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+ //?}
 
 public final class ProcessorTypes implements com.faboslav.friendsandfoes.beekeeperhut.platform.ProcessorTypes
 {

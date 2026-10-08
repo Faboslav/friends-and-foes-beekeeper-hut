@@ -19,7 +19,7 @@ public final class BeekeeperHutItemFrameProcessorHelper
 		StructureEntityInfo globalEntityInfo,
 		StructurePlaceSettings structurePlacementData
 	) {
-		if (!globalEntityInfo.nbt.getString("id").equals("minecraft:item_frame")) {
+		if (!VersionedNbt.getString(globalEntityInfo.nbt, "id", "").equals("minecraft:item_frame")) {
 			return globalEntityInfo;
 		}
 

@@ -1,3 +1,7 @@
+## 3.0.4
+
+- Fixed beekeeper hut item frames and armor stand not being randomized
+
 ## 3.0.3
 
 - Ported to 26.1.2/26.2

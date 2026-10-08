@@ -17,8 +17,8 @@ public final class BeekeeperHutStructureProcessorTypes
 	//? if >=26.2 {
 	public static final ResourcefulRegistry<MapCodec<? extends StructureProcessor>> STRUCTURE_PROCESSOR = ResourcefulRegistries.create(BuiltInRegistries.STRUCTURE_PROCESSOR, BeekeeperHut.MOD_ID);
 	//?} else {
-	/*public static final ResourcefulRegistry<StructureProcessorType<?>> STRUCTURE_PROCESSOR = ResourcefulRegistries.create(BuiltInRegistries.STRUCTURE_PROCESSOR, BeekeeperHut.MOD_ID);
-	*///?}
+	//public static final ResourcefulRegistry<StructureProcessorType<?>> STRUCTURE_PROCESSOR = ResourcefulRegistries.create(BuiltInRegistries.STRUCTURE_PROCESSOR, BeekeeperHut.MOD_ID);
+	//?}
 
 	private BeekeeperHutStructureProcessorTypes() {
 	}

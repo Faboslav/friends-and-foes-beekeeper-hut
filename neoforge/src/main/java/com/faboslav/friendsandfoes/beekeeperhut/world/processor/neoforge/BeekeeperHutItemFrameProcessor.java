@@ -12,14 +12,14 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import org.jetbrains.annotations.Nullable;
 
 //? if <26.2 {
-/*import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
- *///?}
+//import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
+ //?}
 
 //? if >=26.2 {
 public final class BeekeeperHutItemFrameProcessor implements StructureProcessor
 //?} else {
-/*public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
-*///?}
+//public final class BeekeeperHutItemFrameProcessor extends StructureProcessor
+//?}
 {
 	public static final MapCodec<BeekeeperHutItemFrameProcessor> CODEC = MapCodec.unit(BeekeeperHutItemFrameProcessor::new);
 

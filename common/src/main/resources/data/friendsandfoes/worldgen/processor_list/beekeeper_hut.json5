@@ -18,9 +18,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:flowering_azalea_leaves"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:flowering_azalea_leaves"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -31,9 +35,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:dandelion"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:dandelion"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -44,9 +52,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:blue_orchid"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:blue_orchid"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -57,9 +69,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:red_tulip"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:red_tulip"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -70,9 +86,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:orange_tulip"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:orange_tulip"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -83,9 +103,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:white_tulip"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:white_tulip"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -96,9 +120,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:pink_tulip"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:pink_tulip"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -109,9 +137,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:oxeye_daisy"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:oxeye_daisy"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -122,9 +154,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:cornflower"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:cornflower"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -135,9 +171,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:lily_of_the_valley"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:lily_of_the_valley"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -148,9 +188,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:lilac"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:lilac"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -161,9 +205,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "friendsandfoes:buttercup"
+					//?} else {
+					/*"output_state": {
 						"Name": "friendsandfoes:buttercup"
 					}
+					*///?}
 				},
 				{
 					"input_predicate": {
@@ -174,9 +222,13 @@
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
 					},
-					"output_state": {
+					//? if >=26.3 {
+					"output_state": "minecraft:air"
+					//?} else {
+					/*"output_state": {
 						"Name": "minecraft:air"
 					}
+					*///?}
 				}
 			]
 		}
